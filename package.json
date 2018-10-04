@@ -1,0 +1,19 @@
+{
+  "name": "events-calender",
+  "version": "1.0.0",
+  "description": "Event Calander Application for CYF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reber12/events-calender.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reber12/events-calender/issues"
+  },
+  "homepage": "https://github.com/reber12/events-calender#readme"
+}
