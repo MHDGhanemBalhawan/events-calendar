@@ -5,6 +5,7 @@ const router = require("./route/router");
 const mogo = require("mongodb");
 
 const mongoose = require("mongoose");
+
 mongoose.connect("mongodb://localhost:27017/event_calender");
 
 var db = mongoose.connection;
@@ -15,13 +16,7 @@ db.once("open", function() {
   console.log("Database Connection Successful!");
 });
 
-<<<<<<< HEAD
 app.use("/", router);
 app.listen(process.env.PORT || 3001, function() {
   console.log("Server is listening on port 3001. Ready to accept requests!");
-=======
-app.use("/", router)
-app.listen(process.env.PORT || 3001, function () {
-    console.log("Server is listening on port 3001. Ready to accept requests!");
->>>>>>> 37f16359ddb1026c07767b6bd6ac8a479ce30fec
 });
