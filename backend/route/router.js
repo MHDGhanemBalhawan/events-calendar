@@ -1,12 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-router.get("/home", (req, res) => {
-    res.send("it is working");
-})
-
-
-
-
+router.get("/", (req, res) => {
+  res.send("it is working");
+});
 
 module.exports = router;
