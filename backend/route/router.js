@@ -4,7 +4,9 @@ const events = require('../events.json')
 router.get("/home", (req, res) => {
   res.send("it is working");
 });
-
+router.get("/all-events", (req, res) => {
+  res.json(events);
+});
 //
 // router.post("/addingFloaters", function(req, res) {
 //   const data = req.body;
