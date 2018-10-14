@@ -5,7 +5,7 @@ import { Event } from "./Event.js";
 const Events = props => {
     return (
         <div class="events">
-            {fetch("http://localhost:3001//all-events")
+            {fetch("http://localhost:3001//events")
                 .then(res => res.json())
                 .then(testData => {
                     testData.map(function(event) {
@@ -14,15 +14,6 @@ const Events = props => {
                                 name={event.lesson}
                                 description={event.description}
                                 date={event.date}
-                                // floaters={event.floaters.map(function(floater) {
-                                //     return (
-                                //         <ul>
-                                //             <li>
-                                //                 {floater.firstName + " " + floater.surname}
-                                //             </li>
-                                //         </ul>
-                                //     );
-                                // })}
                             />
                         );
                     });
