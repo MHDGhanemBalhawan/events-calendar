@@ -8,7 +8,6 @@ export default class Form extends React.Component {
     }
     onSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
     }
 
     render() {
