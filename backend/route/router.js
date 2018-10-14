@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const { Pool } = require("pg");
 const events = require("../data/events");
 const bodyParser = require("body-parser");
@@ -62,17 +63,7 @@ router.post("/", (req, response) => {
       console.log(res.rows[0]);
     }
   });
-  // const id = new mongoose.Types.ObjectId();
-  // const eventToPresist = Object.assign({ _id: id }, req.body);
-  // const event = new eventModel(eventToPresist);
-  // event.save().then((err, events) => {
-  //   if (err) {
-  //     return res.status(500).send(err);
-  //   }
-  //   res.json(events);
-  // });
-  // // console.log(eventToPresist);
-  // // console.log(JSON.stringify(eventToPresist));
+
 });
 
 router.put("/", (req, res) => {
@@ -85,13 +76,7 @@ router.delete("/", (req, res) => {
   res.end();
 });
 
-// router.get("/", (req, res) => {
-//   res.json(events);
-// });
-// router.get(`${EVENTS_BASE_URL}/:id`, (req, res) => {
-//   const id = req.params.id;
-//   let result = events.filter(item => item.id === id);
-//   res.json(result);
-// });
+
+
 
 module.exports = router;
