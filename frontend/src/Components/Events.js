@@ -4,20 +4,17 @@ import { Event } from "./Event.js";
 
 const Events = props => {
     return (
-        <div class="events">
-            {fetch("http://localhost:3001/events")
-                .then(res => res.json())
-                .then(testData => {
-                    testData.map(function(event) {
-                        return (
-                            <Event
-                                name={event.lesson}
-                                description={event.description}
-                                date={event.date}
-                            />
-                        );
-                    });
-                })}
+        <div className="events">
+            {props.events.map(function(event, i) {
+                return (
+                    <Event
+                        key={i}
+                        name={event.lesson}
+                        description={event.description}
+                        date={event.date}
+                    />
+                );
+            })}
         </div>
     );
 };
