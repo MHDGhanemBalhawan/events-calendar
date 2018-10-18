@@ -1,11 +1,10 @@
 import React from "react";
-// import { testData } from "../TestData.js";
-import { Event } from "./Event.js";
+import Event from "./Event.js";
 
 const Events = props => {
     return (
         <div className="events">
-            {props.events.map(function(event, i) {
+            {props.events.map(function (event, i) {
                 return (
                     <Event
                         key={i}
@@ -19,4 +18,4 @@ const Events = props => {
     );
 };
 
-export { Events };
+export default Events;
