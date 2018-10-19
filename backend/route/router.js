@@ -35,15 +35,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  // const event = _.find(events, event => event.id === req.params.id);
-  // if (event) {
-  //   res.json(event);
-  // } else {
-  //   res.send(`Event with id ${req.params.id} not found.`);
-  // }
   const id = req.params.id;
   let result = events.filter(item => item.id === id);
-  res.json(result);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(`Event with id ${req.params.id} not found.`);
+  }
 });
 
 router.post("/", (req, response) => {
@@ -63,20 +61,23 @@ router.post("/", (req, response) => {
       console.log(res.rows[0]);
     }
   });
-
 });
-
-router.put("/", (req, res) => {
-  console.log("Handeling post request");
-  res.end();
+router.delete("/:id", (req, res) => {
+  console.log("Handeling delete request");
+  const id = req.params.id;
+  console.log(id);
+  const query = {
+    text: `DELETE FROM public.events_tbl WHERE public.events_tbl.id = ${id};`
+  };
+  pool.query(query, (err, response) => {
+    if (err) {
+      console.log(err.stack);
+      response.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+      console.log(response.rows[0]);
+    }
+  });
 });
-
-router.delete("/", (req, res) => {
-  console.log("Handeling post request");
-  res.end();
-});
-
-
-
 
 module.exports = router;
