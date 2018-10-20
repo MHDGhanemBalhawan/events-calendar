@@ -60,13 +60,13 @@ router.post("/", (req, response) => {
     values: [req.body.lesson, req.body.date, req.body.description]
   };
   //callback;
-  pool.query(query, (err, res) => {
+  pool.query(query, (err, response) => {
     if (err) {
       console.log(err.stack);
       res.status(500).send(err);
     } else {
-      res.status(200).send("OK");
-      console.log(res.rows[0]);
+      response.status(200).send("OK");
+      // console.log(result.rows[0]);
     }
   });
 });
