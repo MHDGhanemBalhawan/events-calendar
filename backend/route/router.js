@@ -24,7 +24,7 @@ pool.connect(function(err, poolClient) {
 });
 
 router.get("/", (req, res) => {
-  pool.query("SELECT * FROM events_tbl", function(err, result) {
+  pool.query("SELECT * FROM events_tbl", (err, result) => {
     if (err) {
       console.log(err);
       res.status(400).send(err);
@@ -34,14 +34,22 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", function(req, res) {
+  console.log("Handeling id request");
   const id = req.params.id;
-  let result = events.filter(item => item.id === id);
-  if (result) {
-    res.json(result);
-  } else {
-    res.send(`Event with id ${req.params.id} not found.`);
-  }
+  console.log(id);
+  const query = {
+    text: `SELECT * FROM events_tbl WHERE events_tbl.id = ${id};`
+  };
+  pool.query(query, (err, result) => {
+    if (err) {
+      console.log(err.stack);
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(result.rows[0]);
+      // console.log(result.rows[0]);
+    }
+  });
 });
 
 router.post("/", (req, response) => {
@@ -55,9 +63,9 @@ router.post("/", (req, response) => {
   pool.query(query, (err, res) => {
     if (err) {
       console.log(err.stack);
-      response.status(500).send(err);
+      res.status(500).send(err);
     } else {
-      response.status(200).send("OK");
+      res.status(200).send("OK");
       console.log(res.rows[0]);
     }
   });
@@ -74,7 +82,7 @@ router.delete("/:id", (req, res) => {
       console.log(err.stack);
       response.status(500).send(err);
     } else {
-      res.status(200).send("OK");
+      response.status(200).send("OK");
       console.log(response.rows[0]);
     }
   });
