@@ -38,7 +38,7 @@ router.get("/:id", function(req, res) {
   const id = req.params.id;
   console.log(id);
   const query = {
-    text: `SELECT * FROM events_tbl WHERE events_tbl.id = ${id};`
+    text: `SELECT * FROM events_tbl WHERE events_tbl.event_id = ${id};`
   };
   pool.query(query, (err, result) => {
     if (err) {
