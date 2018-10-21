@@ -1,10 +1,12 @@
 const express = require("express");
+const app = express();
+
 const router = express.Router();
+app.use(router);
 
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 
-// parse the post request as json
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 router.use(json_body_parser);
@@ -50,7 +52,7 @@ router.get("/:id", function(req, res) {
   });
 });
 
-router.post("/", (req, response) => {
+router.post("/", (req, res) => {
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
@@ -62,7 +64,7 @@ router.post("/", (req, response) => {
       console.log(err.stack);
       res.status(500).send(err);
     } else {
-      response.status(200).send("OK");
+      res.status(200).send("OK");
     }
   });
 });
