@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 const { Pool } = require("pg");
-const events = require("../data/events");
 const bodyParser = require("body-parser");
 
 // parse the post request as json
