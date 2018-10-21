@@ -50,11 +50,11 @@ router.get("/:id", function(req, res) {
   });
 });
 
-router.post("/", (req, response) => {
+router.post("/", (req, res) => {
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
-    values: [req.body.lesson, req.body.date, req.body.description]
+    values: [req.body.lesson, req.body.event_date, req.body.description]
   };
   //callback;
   pool.query(query, (err, response) => {
@@ -62,7 +62,7 @@ router.post("/", (req, response) => {
       console.log(err.stack);
       res.status(500).send(err);
     } else {
-      response.status(200).send("OK");
+      res.status(200).send("OK");
     }
   });
 });
