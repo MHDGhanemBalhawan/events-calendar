@@ -29,22 +29,22 @@ export default class MyForm extends React.Component {
 
     render() {
         return <form onSubmit={this.handleSubmit}>
-                <br />
-                <label htmlFor="firstname">
-                    Enter Your First Name{" "}
-                </label>
-                <input id="username" name="firstname" type="text" />
+            <br />
+            <label className="font-weight-bold" htmlFor="firstname">
+                Enter Your First Name{" "}
+            </label>
+            <input className="input form-control" id="username" name="firstname" type="text" />
 
-                <br />
-                <label htmlFor="surname">Enter Your Surname </label>
-                <input id="surname" name="surname" type="text" />
+            <br />
+            <label className="font-weight-bold" htmlFor="surname">Enter Your Surname </label>
+            <input className="input form-control" id="surname" name="surname" type="text" />
 
-                <br />
-                <label htmlFor="email">Enter your email </label>
-                <input id="email" name="email" type="email" />
+            <br />
+            <label className="font-weight-bold" htmlFor="email">Enter Your Email </label>
+            <input className="input form-control" id="email" name="email" type="email" />
 
-                <br />
-                <button className="button4">Yes Volunteer!</button>
-            </form>;
+            <br />
+            <button className="button4">Yes Volunteer!</button>
+        </form>;
     }
 }

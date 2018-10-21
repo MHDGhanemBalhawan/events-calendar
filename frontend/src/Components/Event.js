@@ -24,4 +24,4 @@ const Event = props => {
     );
 };
 
-export { Event };
+export default Event;
