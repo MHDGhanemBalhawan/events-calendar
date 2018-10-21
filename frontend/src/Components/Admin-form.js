@@ -4,7 +4,7 @@ export default class Form extends React.Component {
     state = {
         EventsName: '',
         EventsDate: '',
-        Description: ' '
+        Description: ''
     }
     onSubmit = event => {
         event.preventDefault();
