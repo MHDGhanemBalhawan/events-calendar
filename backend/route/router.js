@@ -47,13 +47,11 @@ router.get("/:id", function(req, res) {
       res.status(500).send(err);
     } else {
       res.status(200).send(result.rows[0]);
-      // console.log(result.rows[0]);
     }
   });
 });
 
 router.post("/", (req, response) => {
-  // console.log(req.body);
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
@@ -66,7 +64,6 @@ router.post("/", (req, response) => {
       res.status(500).send(err);
     } else {
       response.status(200).send("OK");
-      // console.log(result.rows[0]);
     }
   });
 });
