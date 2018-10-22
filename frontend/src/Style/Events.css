@@ -2,5 +2,7 @@
   margin: 30px;
   margin-top: 10px;
   padding: 2px;
-  border-radius: 15px;
+}
+.event_titles {
+margin: 20px;
 }
