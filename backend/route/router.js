@@ -59,7 +59,6 @@ router.post("/", (req, res) => {
   //callback;
   pool.query(query, (err, response) => {
     if (err) {
-      console.log(err.stack);
       res.status(500).send(err);
     } else {
       res.status(200).send("OK");
