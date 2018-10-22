@@ -14,9 +14,7 @@ export default class Form extends React.Component {
     };
     onSubmit = event => {
         event.preventDefault();
-        console.log(this.EventsNameRef.current.value);
-        console.log(this.EventDateRef.current.value);
-        console.log(this.DescriptionRef.current.value)
+
     }
 
     render() {
