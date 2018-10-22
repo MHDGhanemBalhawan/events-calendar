@@ -1,10 +1,8 @@
 import React from "react";
 import "../Style/Event.css";
 import "../Style/Events.css";
-import "../Style/AddButton.css";
 import Popup from "reactjs-popup";
 import MyForm from "./MyForm.js";
-
 
 const Event = props => {
     return (
@@ -14,7 +12,11 @@ const Event = props => {
             <div>Date: {props.date}</div>
             <div>Floaters: {props.floaters}</div>
             <Popup
-                trigger={<button className="button4"> volunteer</button>}
+                trigger={
+                    <button type="button" class="btn btn-outline-primary">
+                        volunteer
+                    </button>
+                }
                 position="right center"
                 modal
             >

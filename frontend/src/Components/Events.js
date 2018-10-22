@@ -4,7 +4,8 @@ import Event from "./Event.js";
 const Events = props => {
     return (
         <div className="events">
-            {props.events.map(function (event, i) {
+            <h1> All Events</h1>
+            {props.events.map(function(event, i) {
                 return (
                     <Event
                         key={i}
