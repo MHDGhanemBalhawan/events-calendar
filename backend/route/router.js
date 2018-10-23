@@ -1,10 +1,10 @@
 const express = require("express");
+
 const router = express.Router();
 
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 
-// parse the post request as json
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 router.use(json_body_parser);
@@ -47,7 +47,7 @@ router.get("/events/:id", function(req, res) {
   });
 });
 
-router.post("/events/", (req, res) => {
+router.post("/events/", (req, r
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
