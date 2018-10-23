@@ -22,7 +22,7 @@ pool.connect(function(err, poolClient) {
   }
 });
 
-router.get("/", (req, res) => {
+router.get("/events", (req, res) => {
   pool.query("SELECT * FROM events_tbl", (err, result) => {
     if (err) {
       console.log(err);
@@ -33,16 +33,13 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/:id", function(req, res) {
-  console.log("Handeling id request");
+router.get("/events/:id", function(req, res) {
   const id = req.params.id;
-  console.log(id);
   const query = {
     text: `SELECT * FROM events_tbl WHERE events_tbl.event_id = ${id};`
   };
   pool.query(query, (err, result) => {
     if (err) {
-      console.log(err.stack);
       res.status(500).send(err);
     } else {
       res.status(200).send(result.rows[0]);
@@ -50,7 +47,7 @@ router.get("/:id", function(req, res) {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/events/", (req, res) => {
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
@@ -59,15 +56,13 @@ router.post("/", (req, res) => {
   //callback;
   pool.query(query, (err, response) => {
     if (err) {
-      console.log(err.stack);
       res.status(500).send(err);
     } else {
       res.status(200).send("OK");
     }
   });
 });
-router.delete("/:id", (req, res) => {
-  console.log("Handeling delete request");
+router.delete("/events/:id", (req, res) => {
   const id = req.params.id;
   const query = {
     text: `DELETE FROM public.events_tbl WHERE public.events_tbl.event_id = ${id};`
@@ -81,4 +76,64 @@ router.delete("/:id", (req, res) => {
   });
 });
 
+// mentors router
+
+router.get("/mentors", (req, res) => {
+  pool.query("SELECT * FROM floaters_tbl", (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(result.rows);
+    }
+  });
+});
+
+router.get("/mentors/:id", function(req, res) {
+  const id = req.params.id;
+  const query = {
+    text: `SELECT * FROM floaters_tbl WHERE floaters_tbl.floater_id = ${id};`
+  };
+  pool.query(query, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(result.rows[0]);
+    }
+  });
+});
+
+router.post("/mentors/", (req, res) => {
+  console.log(req.body);
+  const query = {
+    text:
+      "INSERT INTO public.floaters_tbl(floater_fname, floater_surname, floater_email) VALUES($1, $2, $3)",
+    values: [
+      req.body.floater_fname,
+      req.body.floater_surname,
+      req.body.floater_email
+    ]
+  };
+  //callback;
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
+router.delete("/mentors/:id", (req, res) => {
+  const id = req.params.id;
+  const query = {
+    text: `DELETE FROM public.floaters_tbl WHERE public.floaters_tbl.floater_id = ${id};`
+  };
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
 module.exports = router;

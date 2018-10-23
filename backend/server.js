@@ -6,11 +6,15 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 app.use(morgan("tiny"));
 
-const buildurl = (version, path) => `/api/${version}/${path}`;
+const buildurl = path => `/${path}`;
 
-const EVENTS_BASE_URL = buildurl("v1", "events");
+const EVENTS_BASE_URL = buildurl("events");
+
+const FLOATERS_BASE_URL = buildurl("mentors");
 
 app.use(EVENTS_BASE_URL, router);
+
+app.use(FLOATERS_BASE_URL, router);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
