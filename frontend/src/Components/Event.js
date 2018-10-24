@@ -10,7 +10,7 @@ const Event = props => {
             <p>Description: {props.description}</p>
             <div>Date: {props.date}</div>
             <div>Floaters: {props.floaters}</div>
-            <Popup trigger={<button type="button" class="btn btn-outline-primary mt-4">
+            <Popup trigger={<button type="button" className="btn btn-outline-primary mt-4">
                         volunteer
                     </button>} position="right center" modal>
                 <MyForm />
