@@ -11,9 +11,8 @@ const Event = props => {
             <div>Date: {props.date}</div>
             <div>Floaters: {props.floaters}</div>
             <Popup trigger={<button type="button" className="btn btn-outline-primary mt-4">
-                        volunteer
-                    </button>} position="right center" modal>
-            <VolunteerForm />
+                        volunteer</button>} position="right center" modal>
+                <VolunteerForm />
             </Popup>
         </div>;
 };
