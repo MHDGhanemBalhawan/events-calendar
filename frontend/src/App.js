@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./Style/App.css";
 import Events from "./Components/Events.js";
 import Event from "./Components/Event.js";
-import Form from "./Components/Admin-form.js";
+import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
-
+import Admin from "./Components/Admin/admin.js";
 class App extends Component {
     state = { events: [] };
 
@@ -28,8 +28,8 @@ class App extends Component {
                         />
 
                         <Route path="/event/:id" component={Events} />
-                        <Route path="/admin" component={Form} />
-                        <Route path="/admin/event" />
+                        <Route exact path="/admin" component={Admin} />
+                        <Route path="/admin/events/add" component={Form} />
                     </div>
                 </BrowserRouter>
             </div>

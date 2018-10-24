@@ -20,25 +20,22 @@ export default class Form extends React.Component {
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
-        fetch("/events", {
+        fetch("/api/v1/events", {
             method: "POST",
-            body
+            body: JSON.stringify(body)
         });
         this.props.history.push("/events");
-        console.log(body);
     };
 
     render() {
         return (
-            <div>
-                <br />
-                <h1 className="text-center">Admin</h1>
+            <div className="container mt-2">
+                <h1 className="text-center mb-3">Add Events</h1>
                 <form>
                     <div className="form-group">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-8 m-auto">
-                                    <br />
                                     <br />
                                     <label
                                         className="font-weight-bold"
@@ -78,12 +75,24 @@ export default class Form extends React.Component {
                                         rows="8"
                                     />
                                     <br />
-                                    <button
-                                        className="btn btn-primary"
-                                        onClick={e => this.onSubmit(e)}
+                                    <div
+                                        className="btn-toolbar justify-content-between"
+                                        role="toolbar"
                                     >
-                                        Submit
-                                    </button>
+                                        <button
+                                            className="btn btn-primary"
+                                            onClick={e => this.onSubmit(e)}
+                                        >
+                                            Submit
+                                        </button>
+
+                                        <a
+                                            className="btn btn-primary "
+                                            href="/admin"
+                                        >
+                                            Back
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
