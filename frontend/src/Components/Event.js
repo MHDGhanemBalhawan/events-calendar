@@ -2,7 +2,7 @@ import React from "react";
 import "../Style/Event.css";
 import "../Style/Events.css";
 import Popup from "reactjs-popup";
-import MyForm from "./MyForm.js";
+import AdminForm from "./Admin-form";
 
 const Event = props => {
     return <div className="event">
@@ -13,8 +13,10 @@ const Event = props => {
             <Popup trigger={<button type="button" className="btn btn-outline-primary mt-4">
                         volunteer
                     </button>} position="right center" modal>
-                <MyForm />
+                    
+                <AdminForm name={props.name}/>
             </Popup>
+        <button>edit</button>
         </div>;
 };
 

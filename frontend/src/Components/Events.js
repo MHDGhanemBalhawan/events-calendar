@@ -5,6 +5,7 @@ const Events = props => {
     return (
         <div className="events">
             <h1 className="event_titles">Events</h1>
+            <button>add new event</button>
             {props.events.map(function(event, i) {
                 return (
                     <Event
