@@ -5,7 +5,6 @@ import "../Style/AddButton.css";
 import Popup from "reactjs-popup";
 import VolunteerForm from "./volunteers-form.js";
 
-
 const Event = props => {
     return (
         <div className="event">

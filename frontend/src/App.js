@@ -26,8 +26,10 @@ class App extends Component {
                             path="/events"
                             render={() => <Events events={this.state.events} />}
                         />
-                        <Route path="/event/eventname" component={Event} />
+
+                        <Route path="/event/:id" component={Events} />
                         <Route path="/admin" component={Form} />
+                        <Route path="/admin/event" />
                     </div>
                 </BrowserRouter>
             </div>
