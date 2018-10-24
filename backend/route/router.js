@@ -1,10 +1,10 @@
 const express = require("express");
+
 const router = express.Router();
 
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 
-// parse the post request as json
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 router.use(json_body_parser);
@@ -76,6 +76,26 @@ router.delete("/events/:id", (req, res) => {
   });
 });
 
+router.put("/events/:id", (req, res) => {
+  const id = req.params.id;
+
+  const query = {
+    text: ` UPDATE public.events_tbl SET lesson = '${
+      req.body.lesson
+    }', event_date = '${req.body.event_date}', description = '${
+      req.body.description
+    }' WHERE event_id = ${id};`
+  };
+
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
+
 // mentors router
 
 router.get("/mentors", (req, res) => {
@@ -102,7 +122,25 @@ router.get("/mentors/:id", function(req, res) {
     }
   });
 });
+router.put("/mentors/:id", (req, res) => {
+  const id = req.params.id;
 
+  const query = {
+    text: ` UPDATE floaters_tbl SET floater_fname = '${
+      req.body.floater_fname
+    }', floater_surname = '${req.body.floater_surname}', floater_email = '${
+      req.body.floater_email
+    }' WHERE floater_id = ${id};`
+  };
+
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
 router.post("/mentors/", (req, res) => {
   console.log(req.body);
   const query = {
