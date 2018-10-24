@@ -7,7 +7,7 @@ const formToJson = form => {
     return json;
 };
 
-export default class MyForm extends React.Component {
+export default class VolunteerForm extends React.Component {
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);

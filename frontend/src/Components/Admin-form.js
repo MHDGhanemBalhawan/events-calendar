@@ -6,8 +6,15 @@ export default class Form extends React.Component {
         EventsDate: '',
         Description: ''
     }
+    constructor(props) {
+        super(props);
+        this.EventsNameRef = React.createRef();
+        this.EventDateRef = React.createRef();
+        this.DescriptionRef = React.createRef()
+    };
     onSubmit = event => {
         event.preventDefault();
+
     }
 
     render() {
@@ -19,24 +26,22 @@ export default class Form extends React.Component {
                             <div className="col-md-8 m-auto">
                                 <br />
                                 <br />
-                                <label className="font-weight-bold" for="event name">Events Name</label>
+                                <label className="font-weight-bold" htmlFor="event name">Events Name</label>
 
                                 <input className='input form-control form-control-lg' placeholder='Events name'
-                                    value={this.state.EventsName}
-                                    onChange={e => this.setState({ EventsName: e.target.value })} />
+
+                                    ref={this.EventsNameRef} />
                                 <br />
-                                <label className="font-weight-bold" for="event date">Events Date</label>
+                                <label className="font-weight-bold" htmlFor="event date">Events Date</label>
                                 <input className='input form-control form-control-lg' placeholder='Event date'
-                                    value={this.state.EventsDate}
-                                    onChange={e => this.setState({ EventsDate: e.target.value })} />
+                                    ref={this.EventDateRef} />
                                 <br />
-                                <label className="font-weight-bold" for="event description">Events Description</label>
+                                <label className="font-weight-bold" htmlFor="event description">Events Description</label>
                                 <textarea className='textarea form-control form-control-lg' placeholder='Description'
 
-                                    value={this.state.Description}
-                                    onChange={e => this.setState({ Description: e.target.value })} rows="8"></textarea>
+                                    ref={this.DescriptionRef} rows="8"></textarea>
                                 <br />
-                                <button class="btn btn-primary" onClick={(e) => this.onSubmit(e)}>Submit</button>
+                                <button className="btn btn-primary" onClick={(e) => this.onSubmit(e)}>Submit</button>
                             </div>
                         </div>
                     </div>
