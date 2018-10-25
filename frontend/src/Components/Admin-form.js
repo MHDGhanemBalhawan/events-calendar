@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Form extends React.Component {
+export default class AdminForm extends React.Component {
     state = {
         EventsName: '',
         EventsDate: '',
