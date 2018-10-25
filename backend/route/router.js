@@ -47,7 +47,7 @@ router.get("/events/:id", function(req, res) {
   });
 });
 
-router.post("/events/", (req, r
+router.post("/events/", (req, res) => {
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",

@@ -10,7 +10,7 @@ class App extends Component {
     state = { events: [] };
 
     componentDidMount() {
-        fetch("/api/v1/events")
+        fetch("/events")
             .then(res => res.json())
             .then(data => {
                 this.setState({ events: data });
