@@ -23,8 +23,7 @@ export default class Form extends React.Component {
         fetch("/api/v1/events", {
             method: "POST",
             body: JSON.stringify(body)
-        });
-        this.props.history.push("/events");
+        }).then(this.props.history.push("/events"));
     };
 
     render() {
