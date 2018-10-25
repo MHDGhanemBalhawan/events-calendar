@@ -1,6 +1,4 @@
 import React from "react";
-import "../Style/AddButton.css";
-
 
 //write function that takes event.target (the form) and returns json
 const formToJson = form => {
@@ -28,23 +26,46 @@ export default class VolunteerForm extends React.Component {
     }
 
     render() {
-        return <form onSubmit={this.handleSubmit}>
-            <br />
-            <label className="font-weight-bold" htmlFor="firstname">
-                Enter Your First Name{" "}
-            </label>
-            <input className="input form-control" id="username" name="firstname" type="text" />
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <br />
+                <label className="font-weight-bold" htmlFor="firstname">
+                    Enter Your First Name
+                </label>
+                <input
+                    className="input form-control"
+                    id="username"
+                    name="firstname"
+                    type="text"
+                />
 
-            <br />
-            <label className="font-weight-bold" htmlFor="surname">Enter Your Surname </label>
-            <input className="input form-control" id="surname" name="surname" type="text" />
+                <br />
+                <label className="font-weight-bold" htmlFor="surname">
+                    Enter Your Surname
+                </label>
+                <input
+                    className="input form-control"
+                    id="surname"
+                    name="surname"
+                    type="text"
+                />
 
-            <br />
-            <label className="font-weight-bold" htmlFor="email">Enter Your Email </label>
-            <input className="input form-control" id="email" name="email" type="email" />
+                <br />
+                <label className="font-weight-bold" htmlFor="email">
+                    Enter Your Email
+                </label>
+                <input
+                    className="input form-control"
+                    id="email"
+                    name="email"
+                    type="email"
+                />
 
-            <br />
-            <button className="button4">Yes Volunteer!</button>
-        </form>;
+                <br />
+                <button type="button" class="btn btn-outline-primary">
+                    Yes Volunteer!
+                </button>
+            </form>
+        );
     }
 }
