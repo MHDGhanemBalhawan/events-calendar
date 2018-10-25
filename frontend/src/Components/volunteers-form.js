@@ -1,5 +1,4 @@
 import React from "react";
-
 //write function that takes event.target (the form) and returns json
 const formToJson = form => {
     const data = new FormData(form).entries();
@@ -38,7 +37,6 @@ export default class VolunteerForm extends React.Component {
                     name="firstname"
                     type="text"
                 />
-
                 <br />
                 <label className="font-weight-bold" htmlFor="surname">
                     Enter Your Surname
@@ -49,7 +47,6 @@ export default class VolunteerForm extends React.Component {
                     name="surname"
                     type="text"
                 />
-
                 <br />
                 <label className="font-weight-bold" htmlFor="email">
                     Enter Your Email
@@ -60,9 +57,8 @@ export default class VolunteerForm extends React.Component {
                     name="email"
                     type="email"
                 />
-
                 <br />
-                <button type="button" class="btn btn-outline-primary">
+                <button type="button" className="btn btn-outline-primary">
                     Yes Volunteer!
                 </button>
             </form>
