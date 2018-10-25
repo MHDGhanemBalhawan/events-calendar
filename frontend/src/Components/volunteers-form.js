@@ -29,7 +29,7 @@ export default class VolunteerForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <br />
                 <label className="font-weight-bold" htmlFor="firstname">
-                    Enter Your First Name{" "}
+                    Enter Your First Name
                 </label>
                 <input
                     className="input form-control"
@@ -37,10 +37,9 @@ export default class VolunteerForm extends React.Component {
                     name="firstname"
                     type="text"
                 />
-
                 <br />
                 <label className="font-weight-bold" htmlFor="surname">
-                    Enter Your Surname{" "}
+                    Enter Your Surname
                 </label>
                 <input
                     className="input form-control"
@@ -48,10 +47,9 @@ export default class VolunteerForm extends React.Component {
                     name="surname"
                     type="text"
                 />
-
                 <br />
                 <label className="font-weight-bold" htmlFor="email">
-                    Enter Your Email{" "}
+                    Enter Your Email
                 </label>
                 <input
                     className="input form-control"
@@ -59,9 +57,10 @@ export default class VolunteerForm extends React.Component {
                     name="email"
                     type="email"
                 />
-
                 <br />
-                <button className="button4">Yes Volunteer!</button>
+                <button type="button" className="btn btn-outline-primary">
+                    Yes Volunteer!
+                </button>
             </form>
         );
     }

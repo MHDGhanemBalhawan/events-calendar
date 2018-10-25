@@ -8,10 +8,7 @@ const admin = () => (
                 <a href="/admin/events/add">Add Events</a>
             </li>
             <li className="nav-item">
-                <a href="/admin/events/edit">Edit Events</a>
-            </li>
-            <li className="nav-item">
-                <a href="/admin/events/edit">Delete Events</a>
+                <a href="/admin/events">Events</a>
             </li>
         </ul>
     </div>

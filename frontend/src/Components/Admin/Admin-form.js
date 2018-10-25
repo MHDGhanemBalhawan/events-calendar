@@ -1,5 +1,5 @@
 import React from "react";
-import { history } from "react-router-dom";
+
 export default class Form extends React.Component {
     state = {
         lesson: "",
@@ -20,10 +20,12 @@ export default class Form extends React.Component {
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
-        fetch("/api/v1/events", {
+        fetch("/events", {
             method: "POST",
             body: JSON.stringify(body)
-        }).then(this.props.history.push("/events"));
+        })
+            .then(() => this.props.history.push("/events"))
+            .catch(error => console.error(error));
     };
 
     render() {
