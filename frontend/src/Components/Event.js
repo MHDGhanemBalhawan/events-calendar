@@ -2,22 +2,20 @@ import React from "react";
 import "../Style/Event.css";
 import "../Style/Events.css";
 import Popup from "reactjs-popup";
-import AdminForm from "./Admin-form";
+import MyForm from "./MyForm";
 
 const Event = props => {
-    return <div className="event">
+    return <span>
             <h1>{props.name}</h1>
             <p>Description: {props.description}</p>
             <div>Date: {props.date}</div>
             <div>Floaters: {props.floaters}</div>
-            <Popup trigger={<button type="button" className="btn btn-outline-primary mt-4">
+        <Popup trigger={<button type="button" className="btn btn-outline-primary mr-4 mb-2">
                         volunteer
                     </button>} position="right center" modal>
-                    
-                <AdminForm name={props.name}/>
+                <MyForm/>
             </Popup>
-        <button>edit</button>
-        </div>;
+        </span>;
 };
 
 export default Event;

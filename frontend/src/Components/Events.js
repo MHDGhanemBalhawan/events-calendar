@@ -1,19 +1,21 @@
 import React from "react";
 import Event from "./Event.js";
+import "../Style/Event.css";
 
 const Events = props => {
     return (
         <div className="events">
             <h1 className="event_titles">Events</h1>
-            <button>add new event</button>
             {props.events.map(function(event, i) {
                 return (
-                    <Event
-                        key={i}
-                        name={event.lesson}
-                        description={event.description}
-                        date={event.date}
-                    />
+                    <div className="event">
+                        <Event
+                            key={i}
+                            name={event.lesson}
+                            description={event.description}
+                            date={event.date}
+                        />
+                    </div>
                 );
             })}
         </div>
