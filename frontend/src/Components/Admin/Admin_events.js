@@ -28,9 +28,17 @@ const Adminevents = props => {
                             description={event.description}
                             date={event.date}
                         />
-                        <button className="btn btn-outline-primary mr-4 mb-2">
-                            Edit
-                        </button>
+                        <Popup
+                            trigger={
+                                <button className="btn btn-outline-primary mr-4 mb-2">
+                                    Edit
+                                </button>
+                            }
+                            position="right center"
+                            modal
+                        >
+                            <Form name={props.name} />
+                        </Popup>
                         <button className="btn btn-outline-primary mr-4 mb-2">
                             Delete
                         </button>
