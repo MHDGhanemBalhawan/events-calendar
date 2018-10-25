@@ -1,7 +1,7 @@
 import React from "react";
 import Event from "./Event.js";
 import Popup from "reactjs-popup";
-import AdminForm from "./Admin-form";
+import Form from "./Admin-form";
 import "../Style/Event.css";
 
 
@@ -11,7 +11,7 @@ const Adminevents = props => {
             <Popup trigger={<button className="btn btn-outline-primary mb-2">
                         add a new event
                     </button>} position="right center" modal>
-                <AdminForm name={props.name} />
+                <Form name={props.name} />
             </Popup>
             {props.events.map(function(event, i) {
                 return <div className="event">
