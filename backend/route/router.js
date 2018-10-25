@@ -23,20 +23,23 @@ pool.connect(function(err, poolClient) {
 });
 
 router.get("/events", (req, res) => {
-  pool.query("SELECT * FROM events_tbl", (err, result) => {
-    if (err) {
-      console.log(err);
-      res.status(400).send(err);
-    } else {
-      res.status(200).send(result.rows);
+  pool.query(
+    "SELECT event_id, lesson, event_date as date, description FROM events_tbl",
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(400).send(err);
+      } else {
+        res.status(200).send(result.rows);
+      }
     }
-  });
+  );
 });
 
 router.get("/events/:id", function(req, res) {
   const id = req.params.id;
   const query = {
-    text: `SELECT * FROM events_tbl WHERE events_tbl.event_id = ${id};`
+    text: `SELECT event_id, lesson, event_date as date, description FROM events_tbl WHERE events_tbl.event_id = ${id};`
   };
   pool.query(query, (err, result) => {
     if (err) {
@@ -78,15 +81,13 @@ router.delete("/events/:id", (req, res) => {
 
 router.put("/events/:id", (req, res) => {
   const id = req.params.id;
-
   const query = {
-    text: ` UPDATE public.events_tbl SET lesson = '${
+    text: `UPDATE public.events_tbl SET lesson = '${
       req.body.lesson
     }', event_date = '${req.body.event_date}', description = '${
       req.body.description
     }' WHERE event_id = ${id};`
   };
-
   pool.query(query, (err, response) => {
     if (err) {
       res.status(500).send(err);
@@ -132,7 +133,6 @@ router.put("/mentors/:id", (req, res) => {
       req.body.floater_email
     }' WHERE floater_id = ${id};`
   };
-
   pool.query(query, (err, response) => {
     if (err) {
       res.status(500).send(err);
