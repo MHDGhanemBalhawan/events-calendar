@@ -27,7 +27,6 @@ class App extends Component {
                             render={() => <Events events={this.state.events} />}
                         />
                         <Route path="/event/:id" component={Events} />
-                        <Route path="/admin/events/add" component={Form} />
                         <Route
                             exact
                             path="/admin"
