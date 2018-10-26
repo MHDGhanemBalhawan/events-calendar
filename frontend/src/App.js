@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Style/App.css";
 import Events from "./Components/Events.js";
-import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import AdminEvents from "./Components/Admin/Admin_events.js";
 
