@@ -21,6 +21,10 @@ export default class Form extends React.Component {
             description: this.descriptionRef.current.value
         };
         fetch("/events", {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
             method: "POST",
             body: JSON.stringify(body)
         })
