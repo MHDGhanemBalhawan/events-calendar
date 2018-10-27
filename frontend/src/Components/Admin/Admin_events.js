@@ -19,7 +19,7 @@ const Adminevents = props => {
             >
                 <Form name={props.name} />
             </Popup>
-            {props.events.map(function(event, i) {
+            {props.events.map(function(event, i) { 
                 return (
                     <div className="event">
                         <Event
@@ -27,6 +27,7 @@ const Adminevents = props => {
                             name={event.lesson}
                             description={event.description}
                             date={event.date}
+                            event_id={event.event_id}
                         />
                         <Popup
                             trigger={
@@ -39,7 +40,7 @@ const Adminevents = props => {
                         >
                             <Form name={props.name} />
                         </Popup>
-                        <button className="btn btn-outline-primary mr-4 mb-2">
+                        <button className="btn btn-outline-primary mr-4 mb-2" onClick={props.deleteEvent}>
                             Delete
                         </button>
                     </div>
