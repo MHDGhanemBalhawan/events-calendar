@@ -5,7 +5,6 @@ import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin.js";
 import AdminEvents from "./Components/Admin/Admin_events.js";
-import Event from "./Components/Event.js";
 
 class App extends Component {
     state = { events: [] };
@@ -19,8 +18,8 @@ class App extends Component {
     }
    
     
-    toDelete(event_id) {
-        fetch("/events" + "/" + event_id, {
+    toDelete() {
+        fetch("http://localhost:3001/events/27", {
             method: "delete"
         }).then(response => response.json().then(json => {
                 return json;
@@ -36,7 +35,7 @@ class App extends Component {
                         <Route path="/event/:id" component={Events} />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
-                        <Route exact path="/admin/events" render={() => <AdminEvents events={this.state.events} deleteEvent={this.toDelete(Event.props.event_id)}/>} />
+                        <Route exact path="/admin/events" render={() => <AdminEvents events={this.state.events} deleteEvent={this.toDelete}/>} />
                     </div>
                 </BrowserRouter>
             </div>;
