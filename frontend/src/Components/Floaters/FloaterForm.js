@@ -1,14 +1,16 @@
 import React from "react";
+import Message from "../Message/Message";
 
 export default class FloaterForm extends React.Component {
+    state = {
+        message: false
+    };
+
     constructor(props) {
         super(props);
         this.firstNameRef = React.createRef();
         this.surnameRef = React.createRef();
         this.emailRef = React.createRef();
-        this.state = {
-            mentors: []
-        };
     }
 
     onSubmit = event => {
@@ -26,13 +28,23 @@ export default class FloaterForm extends React.Component {
             method: "POST",
             body: JSON.stringify(body)
         })
-            .then(response => console.log("Success:", JSON.stringify(response)))
+            .then(response => {
+                this.firstNameRef.current.value = "";
+                this.surnameRef.current.value = "";
+                this.emailRef.current.value = "";
+                this.setState({ message: true });
+            })
             .catch(error => console.error(error));
     };
 
     render() {
         return (
             <div className="container mt-2">
+                <Message
+                    show={this.state.message}
+                    status="success"
+                    message="New floater is added"
+                />
                 <h1 className="text-center mb-3">Add Floaters</h1>
                 <form>
                     <div className="form-group">

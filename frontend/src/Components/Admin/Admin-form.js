@@ -1,6 +1,9 @@
 import React from "react";
-
+import Message from "../Message/Message";
 export default class Form extends React.Component {
+    state = {
+        message: false
+    };
     constructor(props) {
         super(props);
         this.lessonRef = React.createRef();
@@ -23,13 +26,23 @@ export default class Form extends React.Component {
             method: "POST",
             body: JSON.stringify(body)
         })
-            .then(() => this.props.history.push("/events"))
+            .then(response => {
+                this.lessonRef.current.value = "";
+                this.event_dateRef.current.value = "";
+                this.descriptionRef.current.value = "";
+                this.setState({ message: true });
+            })
             .catch(error => console.error(error));
     };
 
     render() {
         return (
             <div className="container mt-2">
+                <Message
+                    show={this.state.message}
+                    status="success"
+                    message="New event is added"
+                />
                 <h1 className="text-center mb-3">Add Events</h1>
                 <form>
                     <div className="form-group">

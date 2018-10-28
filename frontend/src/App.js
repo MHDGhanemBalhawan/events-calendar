@@ -29,7 +29,8 @@ class App extends Component {
     }
 
     render() {
-        return <div>
+        return (
+            <div>
                 <BrowserRouter>
                     <div>
                         <Route
@@ -54,7 +55,8 @@ class App extends Component {
                         />
                     </div>
                 </BrowserRouter>
-            </div>;
+            </div>
+        );
     }
 }
 
