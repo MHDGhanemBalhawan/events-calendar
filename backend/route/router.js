@@ -48,6 +48,7 @@ router.get("/events/:id", function(req, res) {
 });
 
 router.post("/events", (req, res) => {
+  console.log(req.body);
   const query = {
     text:
       "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
@@ -79,11 +80,9 @@ router.delete("/events/:id", (req, res) => {
 router.put("/events/:id", (req, res) => {
   const id = req.params.id;
   const query = {
-    text: `UPDATE public.events_tbl SET lesson = '${
-      req.body.lesson
-    }', event_date = '${req.body.event_date}', description = '${
-      req.body.description
-    }' WHERE event_id = ${id};`
+    text:
+      "UPDATE public.events_tbl SET lesson = $1, event_date = $2, description = $3 WHERE event_id = $4;",
+    values: [req.body.lesson, req.body.event_date, req.body.description, id]
   };
   pool.query(query, (err, response) => {
     if (err) {

@@ -2,7 +2,12 @@ const express = require("express");
 const app = express();
 const router = require("./route/router");
 const morgan = require("morgan");
+
 app.use(express.urlencoded());
+
+const bodyParser = require("body-parser");
+var json_body_parser = bodyParser.json();
+router.use(json_body_parser);
 
 app.use(morgan("tiny"));
 
