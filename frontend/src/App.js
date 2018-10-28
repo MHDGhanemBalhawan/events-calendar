@@ -29,7 +29,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.mentors);
         return (
             <div>
                 <BrowserRouter>
