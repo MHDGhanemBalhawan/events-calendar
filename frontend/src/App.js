@@ -28,8 +28,21 @@ class App extends Component {
             });
     }
 
+    toDelete(id) {
+        fetch("/events/" + id, {
+            method: "delete"
+        }).then(response => {
+            if (response.status === 500) {
+                alert("Error: Failed to delete event");
+            } else {
+                window.location.reload();
+            }
+        });
+    }
+
     render() {
-        return <div>
+        return (
+            <div>
                 <BrowserRouter>
                     <div>
                         <Route
@@ -49,12 +62,15 @@ class App extends Component {
                             exact
                             path="/admin/events"
                             render={() => (
-                                <AdminEvents events={this.state.events} />
+                                <AdminEvents 
+                                events={this.state.events} 
+                                deleteEvent={this.toDelete}/>
                             )}
                         />
                     </div>
                 </BrowserRouter>
-            </div>;
+            </div>
+        );
     }
 }
 
