@@ -5,9 +5,14 @@ import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin.js";
 import AdminEvents from "./Components/Admin/Admin_events.js";
+import FloaterForm from "./Components/Floaters/FloaterForm";
+import mainPage from "./Components/MainPage";
 
 class App extends Component {
-    state = { events: [] };
+    state = {
+        events: [],
+        mentors: []
+    };
 
     componentDidMount() {
         fetch("/events")
@@ -15,17 +20,38 @@ class App extends Component {
             .then(data => {
                 this.setState({ events: data });
             });
+
+        fetch("/mentors")
+            .then(res => res.json())
+            .then(data => {
+                this.setState({ mentors: data });
+            });
     }
 
     render() {
         return <div>
                 <BrowserRouter>
                     <div>
-                        <Route exact path="/events" render={() => <Events events={this.state.events} />} />
+                        <Route
+                            exact
+                            path="/events"
+                            render={() => <Events events={this.state.events} />}
+                        />
+                        <Route exact path="/" component={mainPage} />
                         <Route path="/event/:id" component={Events} />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
-                        <Route exact path="/admin/events" render={() => <AdminEvents events={this.state.events} />} />
+                        <Route
+                            path="/admin/floaters/add"
+                            component={FloaterForm}
+                        />
+                        <Route
+                            exact
+                            path="/admin/events"
+                            render={() => (
+                                <AdminEvents events={this.state.events} />
+                            )}
+                        />
                     </div>
                 </BrowserRouter>
             </div>;
