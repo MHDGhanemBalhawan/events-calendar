@@ -3,11 +3,6 @@ const express = require("express");
 const router = express.Router();
 
 const { Pool } = require("pg");
-const bodyParser = require("body-parser");
-
-var json_body_parser = bodyParser.json();
-var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
-router.use(json_body_parser);
 
 var connectionString =
   "postgres://eventsuser:eventsuser147@localhost:5432/events_calendar";
@@ -21,6 +16,8 @@ pool.connect(function(err, poolClient) {
     console.log("Connected to database");
   }
 });
+
+// events router
 
 router.get("/events", (req, res) => {
   pool.query(
@@ -141,8 +138,7 @@ router.put("/mentors/:id", (req, res) => {
     }
   });
 });
-router.post("/mentors/", (req, res) => {
-  console.log(req.body);
+router.post("/mentors", (req, res) => {
   const query = {
     text:
       "INSERT INTO public.floaters_tbl(floater_fname, floater_surname, floater_email) VALUES($1, $2, $3)",
@@ -174,4 +170,78 @@ router.delete("/mentors/:id", (req, res) => {
     }
   });
 });
+
+// events-floaters router
+router.get("/events-floaters", (req, res) => {
+  pool.query(
+    "SELECT floaters_events_id, event_id, floater_id FROM floaters_events_tbl;",
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(400).send(err);
+      } else {
+        res.status(200).send(result.rows);
+      }
+    }
+  );
+});
+router.get("/events-floaters/:id", function(req, res) {
+  const id = req.params.id;
+  const query = {
+    text: `SELECT floaters_events_id, event_id, floater_id FROM public.floaters_events_tbl WHERE floaters_events_tbl.floaters_events_id = ${id};`
+  };
+  pool.query(query, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(result.rows[0]);
+    }
+  });
+});
+
+router.post("/events-floaters", (req, res) => {
+  const query = {
+    text:
+      "INSERT INTO floaters_events_tbl(event_id, floater_id) VALUES($1, $2)",
+    values: [req.body.event_id, req.body.floater_id]
+  };
+  //callback;
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
+router.delete("/events-floaters/:id", (req, res) => {
+  const id = req.params.id;
+  const query = {
+    text: `DELETE FROM public.floaters_events_tbl WHERE floaters_events_tbl.floaters_events_id = ${id};`
+  };
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
+
+router.put("/events-floaters/:id", (req, res) => {
+  const id = req.params.id;
+  const query = {
+    text: `UPDATE public.floaters_events_tbl SET event_id = '${
+      req.body.event_id
+    }', floater_id = '${req.body.floater_id}' WHERE floaters_events_id = ${id};`
+  };
+  pool.query(query, (err, response) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("OK");
+    }
+  });
+});
+
 module.exports = router;

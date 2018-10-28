@@ -1,21 +1,24 @@
 import React from "react";
 
-export default class Form extends React.Component {
+export default class FloaterForm extends React.Component {
     constructor(props) {
         super(props);
-        this.lessonRef = React.createRef();
-        this.event_dateRef = React.createRef();
-        this.descriptionRef = React.createRef();
+        this.firstNameRef = React.createRef();
+        this.surnameRef = React.createRef();
+        this.emailRef = React.createRef();
+        this.state = {
+            mentors: []
+        };
     }
 
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            lesson: this.lessonRef.current.value,
-            event_date: this.event_dateRef.current.value,
-            description: this.descriptionRef.current.value
+            floater_fname: this.firstNameRef.current.value,
+            floater_surname: this.surnameRef.current.value,
+            floater_email: this.emailRef.current.value
         };
-        fetch("/events", {
+        fetch("/mentors", {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
@@ -23,14 +26,14 @@ export default class Form extends React.Component {
             method: "POST",
             body: JSON.stringify(body)
         })
-            .then(() => this.props.history.push("/events"))
+            .then(response => console.log("Success:", JSON.stringify(response)))
             .catch(error => console.error(error));
     };
 
     render() {
         return (
             <div className="container mt-2">
-                <h1 className="text-center mb-3">Add Events</h1>
+                <h1 className="text-center mb-3">Add Floaters</h1>
                 <form>
                     <div className="form-group">
                         <div className="container">
@@ -39,40 +42,39 @@ export default class Form extends React.Component {
                                     <br />
                                     <label
                                         className="font-weight-bold"
-                                        htmlFor="event name"
+                                        htmlFor="first name"
                                     >
-                                        Event Name
+                                        First Name
                                     </label>
 
                                     <input
                                         className="input form-control form-control-lg"
-                                        placeholder="Events name"
-                                        ref={this.lessonRef}
+                                        placeholder="First name"
+                                        ref={this.firstNameRef}
                                     />
                                     <br />
                                     <label
                                         className="font-weight-bold"
-                                        htmlFor="event date"
+                                        htmlFor="surname"
                                     >
-                                        Events Date
+                                        Surname
                                     </label>
                                     <input
                                         className="input form-control form-control-lg"
-                                        placeholder="Event date"
-                                        ref={this.event_dateRef}
+                                        placeholder="Surname"
+                                        ref={this.surnameRef}
                                     />
                                     <br />
                                     <label
                                         className="font-weight-bold"
-                                        htmlFor="event description"
+                                        htmlFor="email"
                                     >
-                                        Events Description
+                                        Email
                                     </label>
-                                    <textarea
-                                        className="textarea form-control form-control-lg"
-                                        placeholder="Description"
-                                        ref={this.descriptionRef}
-                                        rows="8"
+                                    <input
+                                        className="input form-control form-control-lg"
+                                        placeholder="email"
+                                        ref={this.emailRef}
                                     />
                                     <br />
                                     <div
@@ -85,7 +87,6 @@ export default class Form extends React.Component {
                                         >
                                             Submit
                                         </button>
-
                                         <a
                                             className="btn btn-primary "
                                             href="/admin"
