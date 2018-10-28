@@ -3,7 +3,7 @@ import "./Style/App.css";
 import Events from "./Components/Events.js";
 import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
-import Admin from "./Components/Admin/admin.js";
+import Admin from "./Components/Admin/Admin.js";
 import AdminEvents from "./Components/Admin/Admin_events.js";
 import FloaterForm from "./Components/Floaters/FloaterForm";
 import mainPage from "./Components/MainPage";
@@ -29,8 +29,7 @@ class App extends Component {
     }
 
     render() {
-        return (
-            <div>
+        return <div>
                 <BrowserRouter>
                     <div>
                         <Route
@@ -55,8 +54,7 @@ class App extends Component {
                         />
                     </div>
                 </BrowserRouter>
-            </div>
-        );
+            </div>;
     }
 }
 
