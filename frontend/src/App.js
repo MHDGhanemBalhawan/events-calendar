@@ -29,7 +29,6 @@ class App extends Component {
     }
 
     toDelete(id) {
-        console.log("toDelete");
         fetch("/events/" + id, {
             method: "delete"
         }).then(response => {

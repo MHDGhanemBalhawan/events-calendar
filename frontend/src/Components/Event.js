@@ -16,7 +16,7 @@ const Event = props => {
                 trigger={
                     <button
                         type="button"
-                        className="btn btn-outline-primary mr-4 mb-2"
+                        className="btn btn-outline-primary mr-4 mb-2 mt-4"
                     >
                         volunteer
                     </button>
