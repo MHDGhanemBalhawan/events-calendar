@@ -3,6 +3,7 @@ import Event from "../Event.js";
 import Popup from "reactjs-popup";
 import Form from "./Admin-form";
 import "../../Style/Event.css";
+import EditForm from "./Edit_event.js";
 
 const Adminevents = props => {
     return (
@@ -19,32 +20,18 @@ const Adminevents = props => {
             >
                 <Form name={props.name} />
             </Popup>
-            {props.events.map(function(event, i) { 
-                return (
-                    <div className="event">
-                        <Event
-                            key={i}
-                            name={event.lesson}
-                            description={event.description}
-                            date={event.date}
-                            event_id={event.event_id}
-                        />
-                        <Popup
-                            trigger={
-                                <button className="btn btn-outline-primary mr-4 mb-2">
+            {props.events.map(function(event, i) {
+                return <div className="event">
+                        <Event key={i} name={event.lesson} description={event.description} date={event.date} event_id={event.event_id} />
+                        <Popup trigger={<button className="btn btn-outline-primary mr-4 mb-2 mt-4">
                                     Edit
-                                </button>
-                            }
-                            position="right center"
-                            modal
-                        >
-                            <Form name={props.name} />
+                                </button>} position="right center" modal>
+                            <EditForm name={props.name} lesson={event.lesson} event_date={event.date} description={event.description} />
                         </Popup>
-                        <button className="btn btn-outline-primary mr-4 mb-2" onClick={props.deleteEvent}>
+                    <button className="btn btn-outline-primary mr-4 mb-2 mt-4" onClick={props.deleteEvent}>
                             Delete
                         </button>
-                    </div>
-                );
+                    </div>;
             })}
         </div>
     );
