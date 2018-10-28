@@ -142,7 +142,6 @@ router.put("/mentors/:id", (req, res) => {
   });
 });
 router.post("/mentors", (req, res) => {
-  console.log(req.body);
   const query = {
     text:
       "INSERT INTO public.floaters_tbl(floater_fname, floater_surname, floater_email) VALUES($1, $2, $3)",
