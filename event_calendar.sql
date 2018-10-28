@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.14
 -- Dumped by pg_dump version 9.5.14
 
--- Started on 2018-10-28 13:17:00 GMT
+-- Started on 2018-10-28 13:37:35 GMT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -335,7 +335,7 @@ CREATE INDEX fki_event_id ON public.floaters_events_tbl USING btree (event_id);
 
 
 --
--- TOC entry 2047 (class 2606 OID 16723)
+-- TOC entry 2046 (class 2606 OID 16723)
 -- Name: event_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -344,15 +344,15 @@ ALTER TABLE ONLY public.floaters_events_tbl
 
 
 --
--- TOC entry 2046 (class 2606 OID 16706)
+-- TOC entry 2047 (class 2606 OID 16733)
 -- Name: floater_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.floaters_events_tbl
-    ADD CONSTRAINT floater_id FOREIGN KEY (floater_id) REFERENCES public.floaters_tbl(floater_id);
+    ADD CONSTRAINT floater_id FOREIGN KEY (floater_id) REFERENCES public.floaters_tbl(floater_id) ON DELETE CASCADE;
 
 
--- Completed on 2018-10-28 13:17:00 GMT
+-- Completed on 2018-10-28 13:37:35 GMT
 
 --
 -- PostgreSQL database dump complete
