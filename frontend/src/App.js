@@ -16,29 +16,47 @@ class App extends Component {
                 this.setState({ events: data });
             });
     }
-   
-    
-    toDelete() {
-        fetch("http://localhost:3001/events/27", {
+
+    toDelete(id) {
+        console.log("toDelete");
+        fetch("/events/" + id, {
             method: "delete"
-        }).then(response => response.json().then(json => {
-                return json;
-            }));
+        }).then(response => {
+            if (response.status === 500) {
+                alert("Error: Failed to delete event");
+            } else {
+                window.location.reload();
+            }
+        });
     }
-  
 
     render() {
-        return <div>
+        return (
+            <div>
                 <BrowserRouter>
                     <div>
-                        <Route exact path="/events" render={() => <Events events={this.state.events} />} />
+                        <Route
+                            exact
+                            path="/events"
+                            render={() => <Events events={this.state.events} />}
+                        />
                         <Route path="/event/:id" component={Events} />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
-                        <Route exact path="/admin/events" render={() => <AdminEvents events={this.state.events} deleteEvent={this.toDelete}/>} />
+                        <Route
+                            exact
+                            path="/admin/events"
+                            render={() => (
+                                <AdminEvents
+                                    events={this.state.events}
+                                    deleteEvent={this.toDelete}
+                                />
+                            )}
+                        />
                     </div>
                 </BrowserRouter>
-            </div>;
+            </div>
+        );
     }
 }
 
