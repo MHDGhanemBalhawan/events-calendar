@@ -138,7 +138,7 @@ router.put("/mentors/:id", (req, res) => {
     }
   });
 });
-router.post("/mentors/", (req, res) => {
+router.post("/mentors", (req, res) => {
   console.log(req.body);
   const query = {
     text:
