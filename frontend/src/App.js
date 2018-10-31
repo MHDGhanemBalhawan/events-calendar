@@ -66,7 +66,7 @@ class App extends Component {
                             exact
                             path="/admin/floaters"
                             render={() => (
-                                <Floaters mentors={this.state.mentors} />
+                                <Floaters/>
                             )}
                         />
                     </div>
