@@ -103,20 +103,23 @@ router.put("/events/:id", (httpRequest, httpResponse) => {
 // mentors router
 
 router.get("/mentors", (httpRequest, httpResponse) => {
-  pool.query("SELECT * FROM floaters_tbl", (dbError, dbResult) => {
-    if (dbError) {
-      console.log(dbError);
-      httpResponse.status(400).send(dbError);
-    } else {
-      httpResponse.status(200).send(dbResult.rows);
+  pool.query(
+    "SELECT  floater_id, floater_fname, floater_surname, floater_email FROM floaters_tbl",
+    (dbError, dbResult) => {
+      if (dbError) {
+        console.log(dbError);
+        httpResponse.status(400).send(dbError);
+      } else {
+        httpResponse.status(200).send(dbResult.rows);
+      }
     }
-  });
+  );
 });
 
 router.get("/mentors/:id", (httpRequest, httpResponse) => {
   const id = httpRequest.params.id;
   const query = {
-    text: `SELECT * FROM floaters_tbl WHERE floaters_tbl.floater_id = ${id};`
+    text: `SELECT  floater_id, floater_fname, floater_surname, floater_email FROM floaters_tbl WHERE floaters_tbl.floater_id = ${id};`
   };
   pool.query(query, (dbError, dbResult) => {
     if (dbError) {
