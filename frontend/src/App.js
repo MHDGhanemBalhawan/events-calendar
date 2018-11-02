@@ -5,9 +5,9 @@ import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin.js";
 import AdminEvents from "./Components/Admin/Admin_events.js";
-import FloaterForm from "./Components/Floaters/FloaterForm";
+import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/MainPage";
-import Floaters from "./Components/Floaters/Floaters.js";
+import Floaters from "./Components/Admin/Floaters/Floaters.js";
 
 class App extends Component {
     state = {
@@ -65,9 +65,7 @@ class App extends Component {
                         <Route
                             exact
                             path="/admin/floaters"
-                            render={() => (
-                                <Floaters/>
-                            )}
+                            render={() => <Floaters />}
                         />
                     </div>
                 </BrowserRouter>
