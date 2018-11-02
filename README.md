@@ -27,3 +27,4 @@ The aim of this project is to update the current CYF events page so that,
 - [Ali](https://github.com/40thieves)
 - [Jack](https://github.com/jfbookingbug)
 - [Anton](https://github.com/anton-kozyr)
+- [Alexandro](https://github.com/theseafaringturtle)
