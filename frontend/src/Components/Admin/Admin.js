@@ -8,6 +8,9 @@ const admin = () => (
                 <a href="/admin/events/add">Add Events</a>
             </li>
             <li className="nav-item">
+                <a href="/admin/floaters">See All Floaters</a>
+            </li>
+            <li className="nav-item">
                 <a href="/admin/floaters/add">Add Floaters</a>
             </li>
             <li className="nav-item">

@@ -5,13 +5,13 @@ import Form from "./Components/Admin/Admin-form.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin.js";
 import AdminEvents from "./Components/Admin/Admin_events.js";
-import FloaterForm from "./Components/Floaters/FloaterForm";
+import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/MainPage";
+import Floaters from "./Components/Admin/Floaters/Floaters.js";
 
 class App extends Component {
     state = {
-        events: [],
-        mentors: []
+        events: []
     };
 
     componentDidMount() {
@@ -19,12 +19,6 @@ class App extends Component {
             .then(res => res.json())
             .then(data => {
                 this.setState({ events: data });
-            });
-
-        fetch("/mentors")
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ mentors: data });
             });
     }
 
@@ -62,10 +56,16 @@ class App extends Component {
                             exact
                             path="/admin/events"
                             render={() => (
-                                <AdminEvents 
-                                events={this.state.events} 
-                                deleteEvent={this.toDelete}/>
+                                <AdminEvents
+                                    events={this.state.events}
+                                    deleteEvent={this.toDelete}
+                                />
                             )}
+                        />
+                        <Route
+                            exact
+                            path="/admin/floaters"
+                            render={() => <Floaters />}
                         />
                     </div>
                 </BrowserRouter>
