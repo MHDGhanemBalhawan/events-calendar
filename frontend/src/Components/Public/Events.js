@@ -1,6 +1,6 @@
 import React from "react";
 import Event from "./Event.js";
-import "../Style/Event.css";
+import "../../Style/Event.css";
 
 const Events = props => {
     return (

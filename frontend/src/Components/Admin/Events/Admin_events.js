@@ -1,8 +1,8 @@
 import React from "react";
-import Event from "../Event.js";
+import Event from "../../Public/Event.js";
 import Popup from "reactjs-popup";
 import Form from "./Admin-form";
-import "../../Style/Event.css";
+import "../../../Style/Event.css";
 import EditForm from "./Edit_event.js";
 
 const Adminevents = props => {
@@ -32,7 +32,10 @@ const Adminevents = props => {
                         />
                         <Popup
                             trigger={
-                                <button className="btn btn-outline-primary mr-4 mb-2 mt-4">
+                                <button
+                                    type="button"
+                                    className="btn btn btn-warning mr-4 mb-2 mt-4"
+                                >
                                     Edit
                                 </button>
                             }
@@ -44,10 +47,11 @@ const Adminevents = props => {
                                 lesson={event.lesson}
                                 event_date={event.date}
                                 description={event.description}
+                                id={event.event_id}
                             />
                         </Popup>
                         <button
-                            className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                            className="btn btn-danger  mr-4 mb-2 mt-4"
                             onClick={function() {
                                 props.deleteEvent(event.event_id);
                             }}

@@ -1,36 +1,41 @@
 import React from "react";
-import Message from "../Message/Message";
-export default class Form extends React.Component {
+import Message from "../../Message/Message";
+
+export default class EditFloater extends React.Component {
     state = {
+        floater_fname: "",
+        floater_surname: "",
+        floater_email: "",
         message: false
     };
     constructor(props) {
         super(props);
-        this.lessonRef = React.createRef();
-        this.event_dateRef = React.createRef();
-        this.descriptionRef = React.createRef();
+        this.floater_fnameRef = React.createRef();
+        this.floater_surnameRef = React.createRef();
+        this.floater_emailRef = React.createRef();
     }
 
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            lesson: this.lessonRef.current.value,
-            event_date: this.event_dateRef.current.value,
-            description: this.descriptionRef.current.value
+            floater_fname: this.floater_fnameRef.current.value,
+            floater_surname: this.floater_surnameRef.current.value,
+            floater_email: this.floater_emailRef.current.value
         };
-        fetch("/events", {
+        fetch("/mentors/" + this.props.floater_id, {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             },
-            method: "POST",
+            method: "put",
             body: JSON.stringify(body)
         })
-            .then(response => {
-                this.lessonRef.current.value = "";
-                this.event_dateRef.current.value = "";
-                this.descriptionRef.current.value = "";
+            .then(() => {
+                this.floater_fnameRef.current.value = "";
+                this.floater_surnameRef.current.value = "";
+                this.floater_emailRef.current.value = "";
                 this.setState({ message: true });
+                this.props.history.push("/mentors");
             })
             .catch(error => console.error(error));
     };
@@ -41,9 +46,9 @@ export default class Form extends React.Component {
                 <Message
                     show={this.state.message}
                     status="success"
-                    message="New event is added"
+                    message="Floater Has Been Edited"
                 />
-                <h1 className="text-center mb-3">Add Events</h1>
+                <h1 className="text-center mb-3">Editing this Event</h1>
                 <form>
                     <div className="form-group">
                         <div className="container">
@@ -54,37 +59,39 @@ export default class Form extends React.Component {
                                         className="font-weight-bold"
                                         htmlFor="event name"
                                     >
-                                        Event Name
+                                        First Name
                                     </label>
 
                                     <input
                                         className="input form-control form-control-lg"
-                                        placeholder="Events name"
-                                        ref={this.lessonRef}
+                                        defaultValue={this.props.floater_fname}
+                                        ref={this.floater_fnameRef}
                                     />
                                     <br />
                                     <label
                                         className="font-weight-bold"
                                         htmlFor="event date"
                                     >
-                                        Events Date
+                                        Surname
                                     </label>
                                     <input
                                         className="input form-control form-control-lg"
-                                        placeholder="Event date"
-                                        ref={this.event_dateRef}
+                                        defaultValue={
+                                            this.props.floater_surname
+                                        }
+                                        ref={this.floater_surnameRef}
                                     />
                                     <br />
                                     <label
                                         className="font-weight-bold"
                                         htmlFor="event description"
                                     >
-                                        Events Description
+                                        Email
                                     </label>
                                     <textarea
                                         className="textarea form-control form-control-lg"
-                                        placeholder="Description"
-                                        ref={this.descriptionRef}
+                                        defaultValue={this.props.floater_email}
+                                        ref={this.floater_emailRef}
                                         rows="8"
                                     />
                                     <br />
@@ -101,7 +108,7 @@ export default class Form extends React.Component {
 
                                         <a
                                             className="btn btn-primary "
-                                            href="/admin"
+                                            href="/admin/events"
                                         >
                                             Back
                                         </a>

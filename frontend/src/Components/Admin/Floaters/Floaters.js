@@ -1,6 +1,8 @@
 import React from "react";
 import "../../../Style/Event.css";
 import Message from "../../Message/Message";
+import Popup from "reactjs-popup";
+import EditFloater from "./EditFloater.js";
 
 export default class Floaters extends React.Component {
     state = {
@@ -58,12 +60,31 @@ export default class Floaters extends React.Component {
                                     <td>{floater.floater_surname}</td>
                                     <td>{floater.floater_email}</td>
                                     <td>
-                                        <button
-                                            type="button"
-                                            className="btn btn-warning"
+                                        <Popup
+                                            trigger={
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-warning"
+                                                >
+                                                    Edit
+                                                </button>
+                                            }
+                                            position="right center"
+                                            modal
                                         >
-                                            Edit
-                                        </button>
+                                            <EditFloater
+                                                floater_fname={
+                                                    floater.floater_fname 
+                                                }
+                                                floater_surname={
+                                                    floater.floater_surname
+                                                }
+                                                floater_email={
+                                                    floater.floater_email
+                                                }
+                                                floater_id={floater.floater_id}
+                                            />
+                                        </Popup>
                                     </td>
                                     <td>
                                         <button
