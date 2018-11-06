@@ -1,14 +1,16 @@
 import React from "react";
+import Message from "../../Message/Message";
 
 export default class EditForm extends React.Component {
     state = {
         lesson: "",
         event_date: "",
-        description: ""
+        description: "",
+        message: false
+
     };
     constructor(props) {
         super(props);
-
         this.lessonRef = React.createRef();
         this.event_dateRef = React.createRef();
         this.descriptionRef = React.createRef();
@@ -21,7 +23,7 @@ export default class EditForm extends React.Component {
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
-        fetch("/events/" + "event", {
+        fetch("/events/" + this.props.id, {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
@@ -29,13 +31,23 @@ export default class EditForm extends React.Component {
             method: "put",
             body: JSON.stringify(body)
         })
-            .then(() => this.props.history.push("/events"))
+            .then(() => {
+                this.lessonRef.current.value = "";
+                this.event_dateRef.current.value = "";
+                this.descriptionRef.current.value = "";
+                this.setState({ message: true });
+                this.props.history.push("/events")})
             .catch(error => console.error(error));
     };
 
     render() {
         return (
             <div className="container mt-2">
+                <Message
+                    show={this.state.message}
+                    status="success"
+                    message="Event Has Been Edited"
+                />
                 <h1 className="text-center mb-3">Editing this Event</h1>
                 <form>
                     <div className="form-group">
