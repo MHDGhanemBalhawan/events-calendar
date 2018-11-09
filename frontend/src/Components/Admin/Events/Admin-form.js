@@ -101,7 +101,7 @@ export default class Form extends React.Component {
 
                                         <a
                                             className="btn btn-primary "
-                                            href="/admin"
+                                            href="/admin/events"
                                         >
                                             Back
                                         </a>

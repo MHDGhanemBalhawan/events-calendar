@@ -9,13 +9,7 @@ const Event = props => {
             <h1>{props.name}</h1>
             <p>Description: {props.description}</p>
             <div>Date: {moment(props.date).format("Do MMMM  YYYY")}</div>
-            <div>Floaters: {props.floaters}</div>
-            <button
-                type="button"
-                className="btn btn-outline-primary mr-4 mb-2 mt-4"
-            >
-                volunteer
-            </button>
+            <div>Floaters: {props.floaters}</div>   
         </span>
     );
 };

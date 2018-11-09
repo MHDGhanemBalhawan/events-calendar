@@ -102,7 +102,7 @@ export default class FloaterForm extends React.Component {
                                         </button>
                                         <a
                                             className="btn btn-primary "
-                                            href="/admin"
+                                            href="/admin/floaters"
                                         >
                                             Back
                                         </a>
