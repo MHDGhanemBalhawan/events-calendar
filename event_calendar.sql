@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.14
 -- Dumped by pg_dump version 9.5.14
 
--- Started on 2018-10-28 13:37:35 GMT
+-- Started on 2018-11-10 14:58:54 GMT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -202,26 +202,123 @@ ALTER TABLE ONLY public.floaters_tbl ALTER COLUMN floater_id SET DEFAULT nextval
 -- Data for Name: events_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (24, 'html-2', '2018-09-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (25, 'Javascript-4', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (26, 'Javascript-4', '2018-10-17', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (27, 'Javascript-6', '2018-10-25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (28, 'React-1', '2018-11-01', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (30, 'React-3', '2018-11-25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (31, 'Database', '2018-11-27', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (29, 'React-2', '2018-11-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (32, 'MongoDB', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (34, 'SQL', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (35, 'Postgres', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (36, 'API', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (37, 'React-4', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (38, 'React-5', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (40, 'React-6', '2018-10-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (44, 'React-22', '2018-12-22', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (46, 'Javascript-20', NULL, 'Updated Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (47, 'Javascript-20', '2018-01-01', 'Updated Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (45, 'Dramatic', NULL, 'Updated Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (48, 'node', '2018-01-01', 'Updated Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (1, 'HTML/CSS 1', '2018-12-01', 'HTML Syntax
+You''re already familiar with HTML code from your application process. If you want to refresh your memory, read this quick guide to the HTML syntax.
+
+Example HTML/CSS Project
+In today''s class, we will begin adapting styles on this example website. We''ll review some of the HTML/CSS basics you already encountered during your application process and learn some new techniques. By the end of the third lesson, we will have worked together to improve the example site on the left so that it looks like the screenshot on the right.
+
+Semantic HTML
+When writing HTML code, you can use different tags to describe the content. Is it a navigation menu, a paragraph of text, or an article? By using the correct tag, you help search engines like Google or screen readers for the visually impaired.
+
+CSS Selectors
+During your application process, you became familiar with CSS selectors. We''ll review the basic selectors and then practice combining these to modify our button styles.
+
+Pseudo Classes
+There are also things called "pseudo" classes. In this section, we''ll introduce you to the common pseudo classes for assigning styles to interactions, such as moving your mouse over a link.
+
+Box Model
+In CSS, everything is a box. An image is a box. A link is a box. The area around this box can be modified with properites that we call margins, borders and padding. Here''s a diagram showing what the box looks like.
+
+Git Conflicts
+As a professional, you''ll usually need to work alongside other coders to build an app or website. We use version control to coordinate changes and manage any conflicts that arise. Git is a version control system which helps us merge code that we''ve been working on separately into one common codebase.
+
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (3, 'HTML/CSS 2', '2018-12-08', 'Responsive Web Design
+When we build for the web, we''re making websites that can be viewed in a phone, a laptop, a tablet and more. To ensure we''re presenting a website that''s easy to use on any device, we use Responsive Web Design techniques to modify how content is displayed depending on the viewport.
+
+Media Queries
+As you learned in your homework assignment, media queries help us change the display of our content depending on the size of the viewport.
+
+Flexbox
+Flexbox is a name for a set of CSS layout rules which are supported in newer browsers. They allow you to apply rules to elements to place them side-by-side and re-arrange them. You just specify how you want your elements arranged and the browser will scale this arrangement depending on the screen size and device used for viewing.
+
+Most flexbox rules are applied to the container, to tell it how to arrange its children. However, there are some rules that can be applied to children as well.
+
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (4, 'HTML/CSS 3', '2018-12-15', 'HTML/CSS Frameworks
+A design framework is a collection of re-usable code snippets which you can use to build a website. It is sometimes called a "design system", "style guide", or "pattern library", and will usually consist of three things:
+
+Brand guidelines define the appropriate typography, colors and logos to use.
+Components define re-usable code snippets for common requirements, like navigation menus.
+Helpers define additional code tools to construct the site, like layout grids.
+The main goals of a design framework are to ensure design consistency and avoid writing the same code twice.
+
+Bootstrap 4
+Bootstrap is CSS and JavaScript code that we load in our HTML pages. Bootstrap''s documentation describes how to write HTML code that fits the Bootstrap components, including a grid layout as well as several components.
+
+Personal Websites
+Over the last two weeks, you''ve been building personal websites as part of your homework. Now we want you to take those websites and apply the knowledge you''ve learned to make them as good as you can. Some ideas:
+
+Add Bootstrap 4 to your site and use some of the components.
+Use re-usable class names to reduce your CSS code.
+Validate your HTML code to find and fix problems.
+Add a second page and link to it from your first page.
+Try to style the first article differently so that it stands out from the rest.
+By the end, you should have created a repository for your site on GitHub with all the commits you''ve made.
+
+Retrospective
+At the end of each module, we''ll have a retrospective. What went right? What went wrong? What can we do better to help you learn? Let''s discuss the HTML/CSS module.');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (5, 'JavaScript Core I - 1', '2018-12-23', 'What we will learn today?
+
+Install Node
+Setup IDE
+Hello World
+Variables
+Strings
+String concatenation
+Numbers
+Floats
+Functions
+Function Parameters
+Nested Functions
+
+1-Install Node
+Windows and Mac users
+Linux (Ubuntu) users
+
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (6, 'JavaScript Core I - 2', '2018-01-05', 'What we will learn today?
+
+Expressions
+Boolean Filters
+Comparison operators
+Predicates
+Conditionals
+Logical Operators
+More Conditionals
+Array literals
+Array properties
+Array getters and setters
+Array methods
+More Array methods
+Array map');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (7, 'JavaScript Core I - 3', '2018-01-12', 'What we will learn today?
+
+Array Find
+Array Some
+Array Every
+Array Filter
+Array Map
+Array ForEach
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (8, 'JavaScript Core II - 1', '2018-01-20', 'What we will learn today?
+
+Objects
+Objects Get and Set
+More complex objects
+Object methods
+Arrays of Objects
+Object.Keys()');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (9, 'JavaScript Core II - 2', '2018-01-24', 'What we will learn today?
+
+JS In the Browser (The DOM)
+Callbacks and Asynchronous Functions
+Promises
+AJAX
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (10, 'JavaScript Core II - 3', '2018-02-01', 'More JS in the Browser
+Fork, clone and follow the instructions on the Dom-AJAX workshop repo');
 
 
 --
@@ -230,7 +327,7 @@ INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES
 -- Name: events_tbl_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.events_tbl_id_seq', 48, true);
+SELECT pg_catalog.setval('public.events_tbl_id_seq', 10, true);
 
 
 --
@@ -239,15 +336,6 @@ SELECT pg_catalog.setval('public.events_tbl_id_seq', 48, true);
 -- Data for Name: floaters_events_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (21, 25, 5);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (20, 27, 5);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (28, 30, 5);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (29, 31, 5);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (30, 31, 2);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (33, 27, 2);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (34, 25, 2);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (35, 30, 2);
-INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id) VALUES (36, 31, 3);
 
 
 --
@@ -256,7 +344,7 @@ INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id
 -- Name: floaters_events_tbl_floaters_events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.floaters_events_tbl_floaters_events_id_seq', 12, true);
+SELECT pg_catalog.setval('public.floaters_events_tbl_floaters_events_id_seq', 1, true);
 
 
 --
@@ -265,7 +353,7 @@ SELECT pg_catalog.setval('public.floaters_events_tbl_floaters_events_id_seq', 12
 -- Name: floaters_floaters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.floaters_floaters_id_seq', 6, true);
+SELECT pg_catalog.setval('public.floaters_floaters_id_seq', 1, true);
 
 
 --
@@ -274,11 +362,22 @@ SELECT pg_catalog.setval('public.floaters_floaters_id_seq', 6, true);
 -- Data for Name: floaters_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (2, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nsmith@yahoo.com');
 INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (3, 'Nadine                                                                                                                                                                                                                                                         ', 'Dodo                                                                                                                                                                                                                                                           ', 'nadine@hotmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (4, 'Tony                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'tony@gmail.com');
 INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (5, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nsmith@yahoo.com');
 INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (6, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nsmith@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (4, 'Nany                                                                                                                                                                                                                                                           ', 'Colen                                                                                                                                                                                                                                                          ', 'namy@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (7, 'Nany                                                                                                                                                                                                                                                           ', 'Colen                                                                                                                                                                                                                                                          ', 'namy@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (8, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (9, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (10, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (11, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (12, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (13, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (14, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (15, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (16, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (17, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (18, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
 
 
 --
@@ -352,7 +451,7 @@ ALTER TABLE ONLY public.floaters_events_tbl
     ADD CONSTRAINT floater_id FOREIGN KEY (floater_id) REFERENCES public.floaters_tbl(floater_id) ON DELETE CASCADE;
 
 
--- Completed on 2018-10-28 13:37:35 GMT
+-- Completed on 2018-11-10 14:58:55 GMT
 
 --
 -- PostgreSQL database dump complete

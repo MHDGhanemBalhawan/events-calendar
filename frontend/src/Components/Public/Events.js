@@ -15,7 +15,6 @@ const Events = props => {
                             name={event.lesson}
                             description={event.description}
                             date={event.date}
-                            // floaters={event.floaters}
                         />
                         <FloatersOfEvents id={event.event_id} />
                         <button
@@ -24,6 +23,13 @@ const Events = props => {
                         >
                             volunteer
                         </button>
+                        <a
+                            className="btn btn-link mr-4 mb-2 mt-4"
+                            href={`/event/${event.event_id}`}
+                            alt={event.lesson}
+                        >
+                            Read more
+                        </a>
                     </div>
                 );
             })}
