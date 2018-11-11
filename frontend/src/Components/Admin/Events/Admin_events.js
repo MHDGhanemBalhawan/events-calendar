@@ -4,6 +4,7 @@ import Popup from "reactjs-popup";
 import Form from "./Admin-form";
 import "../../../Style/Event.css";
 import EditForm from "./Edit_event.js";
+import FloatersOfEvents from "../Floaters/Floaters_of_event.js";
 
 const Adminevents = props => {
     return (
@@ -20,6 +21,9 @@ const Adminevents = props => {
             >
                 <Form name={props.name} />
             </Popup>
+            <button className="btn btn-outline-primary ml-2 mb-2">
+                <a href="/admin">Back</a>
+            </button>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event">
@@ -30,6 +34,13 @@ const Adminevents = props => {
                             date={event.date}
                             event_id={event.event_id}
                         />
+                        <FloatersOfEvents id={event.event_id} />
+                        <button
+                            type="button"
+                            className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                        >
+                            Assign Volunteer
+                        </button>
                         <Popup
                             trigger={
                                 <button

@@ -253,3 +253,17 @@ router.put("/events-floaters/:id", (httpRequest, httpResponse) => {
   });
 });
 module.exports = router;
+
+router.get("/events-floaters/event/:id", (httpRequest, httpResponse) => {
+  const id = httpRequest.params.id;
+  const query = {
+    text: `SELECT * FROM public.floaters_events_tbl INNER JOIN public.floaters_tbl ON (public.floaters_events_tbl.floater_id = public.floaters_tbl.floater_id) WHERE floaters_events_tbl.event_id = ${id} ;`
+  };
+  pool.query(query, (dbError, dbResult) => {
+    if (dbError) {
+      httpResponse.status(500).send(dbError);
+    } else {
+      httpResponse.status(200).send(dbResult.rows);
+    }
+  });
+});
