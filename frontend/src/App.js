@@ -8,6 +8,7 @@ import AdminEvents from "./Components/Admin/Events/Admin_events.js";
 import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/Public/MainPage";
 import Floaters from "./Components/Admin/Floaters/Floaters.js";
+import SingleEvent from "./Components/Public/SingleEvent";
 
 class App extends Component {
     state = {
@@ -45,7 +46,7 @@ class App extends Component {
                             render={() => <Events events={this.state.events} />}
                         />
                         <Route exact path="/" component={mainPage} />
-                        <Route path="/event/:id" component={Events} />
+                        <Route path="/event/:id" component={SingleEvent} />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
                         <Route
