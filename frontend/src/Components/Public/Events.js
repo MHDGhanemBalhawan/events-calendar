@@ -15,6 +15,13 @@ const Events = props => {
                             description={event.description}
                             date={event.date}
                         />
+                        <a
+                            className="btn btn-link mr-4 mb-2 mt-4"
+                            href={`/event/${event.event_id}`}
+                            alt={event.lesson}
+                        >
+                            Read more
+                        </a>
                     </div>
                 );
             })}
