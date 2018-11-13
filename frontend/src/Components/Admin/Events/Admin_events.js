@@ -5,6 +5,7 @@ import Form from "./Admin-form";
 import "../../../Style/Event.css";
 import EditForm from "./Edit_event.js";
 import FloatersOfEvents from "../Floaters/Floaters_of_event.js";
+import VolunteerForm from "../Floaters/FloaterToVolunteer";
 
 const Adminevents = props => {
     return (
@@ -35,12 +36,20 @@ const Adminevents = props => {
                             event_id={event.event_id}
                         />
                         <FloatersOfEvents id={event.event_id} />
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                        <Popup
+                            trigger={
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                                >
+                                    volunteer
+                                </button>
+                            }
+                            position="right center"
+                            modal
                         >
-                            Assign Volunteer
-                        </button>
+                            <VolunteerForm />
+                        </Popup>
                         <Popup
                             trigger={
                                 <button
