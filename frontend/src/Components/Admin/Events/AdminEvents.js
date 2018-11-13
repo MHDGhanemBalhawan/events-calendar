@@ -1,10 +1,10 @@
 import React from "react";
 import Event from "../../Public/Event.js";
 import Popup from "reactjs-popup";
-import Form from "./Admin-form";
+import Form from "./AdminForm";
 import "../../../Style/Event.css";
-import EditForm from "./Edit_event.js";
-import FloatersOfEvents from "../Floaters/Floaters_of_event.js";
+import EditForm from "./EditEvent.js";
+import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
 import VolunteerForm from "../Floaters/FloaterToVolunteer";
 
 const Adminevents = props => {
@@ -27,7 +27,7 @@ const Adminevents = props => {
             </button>
             {props.events.map(function(event, i) {
                 return (
-                    <div className="event">
+                    <div className="event" key={i}>
                         <Event
                             key={i}
                             name={event.lesson}

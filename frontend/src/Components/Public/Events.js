@@ -1,7 +1,7 @@
 import React from "react";
 import Event from "./Event.js";
 import "../../Style/Event.css";
-import FloatersOfEvents from "../Admin/Floaters/Floaters_of_event.js";
+import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 import Popup from "reactjs-popup";
 import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 
@@ -11,7 +11,7 @@ const Events = props => {
             <h1 className="event_titles">Events</h1>
             {props.events.map(function(event, i) {
                 return (
-                    <div className="event">
+                    <div className="event" key={i}>
                         <Event
                             key={i}
                             name={event.lesson}
