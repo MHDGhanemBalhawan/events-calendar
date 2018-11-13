@@ -19,7 +19,7 @@ const Events = props => {
                             date={event.date}
                         />
                         <FloatersOfEvents id={event.event_id} />
-                        
+
                         <Popup
                             trigger={
                                 <button
@@ -27,12 +27,12 @@ const Events = props => {
                                     className="btn btn-outline-primary mr-4 mb-2 mt-4"
                                 >
                                     volunteer
-                    </button>
+                                </button>
                             }
                             position="right center"
                             modal
                         >
-                            <VolunteerForm />
+                            <VolunteerForm event_id={event.event_id} />
                         </Popup>
 
                         <a

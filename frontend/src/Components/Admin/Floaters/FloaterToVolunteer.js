@@ -1,7 +1,7 @@
 import React from "react";
 
 export default class VolunteerForm extends React.Component {
-    state = { floaters: [] };
+    state = { floaters: [], message: false };
 
     componentDidMount() {
         fetch("/mentors")
@@ -11,8 +11,8 @@ export default class VolunteerForm extends React.Component {
             });
     }
 
-    _addFloaterToEvent = id => {
-        console.log(id);
+    _addFloaterToEvent = floater_id => {
+        console.log(floater_id + " " + this.props.event_id);
     };
 
     render() {

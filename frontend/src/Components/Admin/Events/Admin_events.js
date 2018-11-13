@@ -48,7 +48,7 @@ const Adminevents = props => {
                             position="right center"
                             modal
                         >
-                            <VolunteerForm />
+                            <VolunteerForm event_id={event.event_id} />
                         </Popup>
                         <Popup
                             trigger={
