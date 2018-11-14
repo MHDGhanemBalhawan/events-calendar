@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Style/App.css";
 import Events from "./Components/Public/Events.js";
-import Form from "./Components/Admin/Events/Admin-form.js";
+import Form from "./Components/Admin/Events/AdminForm.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin.js";
-import AdminEvents from "./Components/Admin/Events/Admin_events.js";
+import AdminEvents from "./Components/Admin/Events/AdminEvents.js";
 import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/Public/MainPage";
 import Floaters from "./Components/Admin/Floaters/Floaters.js";

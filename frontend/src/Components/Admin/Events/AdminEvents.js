@@ -1,10 +1,11 @@
 import React from "react";
 import Event from "../../Public/Event.js";
 import Popup from "reactjs-popup";
-import Form from "./Admin-form";
+import Form from "./AdminForm";
 import "../../../Style/Event.css";
-import EditForm from "./Edit_event.js";
-import FloatersOfEvents from "../Floaters/Floaters_of_event.js";
+import EditForm from "./EditEvent.js";
+import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
+import VolunteerForm from "../Floaters/FloaterToVolunteer";
 
 const Adminevents = props => {
     return (
@@ -26,7 +27,7 @@ const Adminevents = props => {
             </button>
             {props.events.map(function(event, i) {
                 return (
-                    <div className="event">
+                    <div className="event" key={i}>
                         <Event
                             key={i}
                             name={event.lesson}
@@ -35,12 +36,20 @@ const Adminevents = props => {
                             event_id={event.event_id}
                         />
                         <FloatersOfEvents id={event.event_id} />
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                        <Popup
+                            trigger={
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                                >
+                                    volunteer
+                                </button>
+                            }
+                            position="right center"
+                            modal
                         >
-                            Assign Volunteer
-                        </button>
+                            <VolunteerForm event_id={event.event_id} />
+                        </Popup>
                         <Popup
                             trigger={
                                 <button

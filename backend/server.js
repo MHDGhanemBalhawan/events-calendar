@@ -18,9 +18,13 @@ const EVENTS_BASE_URL = buildurl("events");
 
 const FLOATERS_BASE_URL = buildurl("mentors");
 
+const EVENTS_FLOATERS_BASE_URL = buildurl("events-floaters");
+
 app.use(EVENTS_BASE_URL, router);
 
 app.use(FLOATERS_BASE_URL, router);
+
+app.use(EVENTS_FLOATERS_BASE_URL, router);
 
 app.use("/", router);
 
