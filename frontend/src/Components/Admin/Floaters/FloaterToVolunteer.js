@@ -1,5 +1,6 @@
 import React from "react";
 import Message from "../../Message/Message";
+import "../../../Style/Event.css";
 
 export default class VolunteerForm extends React.Component {
     state = { allmentors: [], message: false, volunteers: [], message2: false };
@@ -101,7 +102,9 @@ export default class VolunteerForm extends React.Component {
                                 >
                                     {mentor.floater_fname}{" "}
                                     {mentor.floater_surname}
-                                    {mentorIsVolunteered && "✅"}
+                                    <span className="btn float-right">
+                                        {mentorIsVolunteered && "✅"}
+                                    </span>
                                 </button>
                             </div>
                         );
