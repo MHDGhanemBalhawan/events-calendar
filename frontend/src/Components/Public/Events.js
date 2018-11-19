@@ -1,7 +1,9 @@
 import React from "react";
 import Event from "./Event.js";
 import "../../Style/Event.css";
-import FloatersOfEvents from "../Admin/Floaters/Floaters_of_event.js";
+import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
+import Popup from "reactjs-popup";
+import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 
 const Events = props => {
     return (
@@ -9,7 +11,7 @@ const Events = props => {
             <h1 className="event_titles">Events</h1>
             {props.events.map(function(event, i) {
                 return (
-                    <div className="event">
+                    <div className="event" key={i}>
                         <Event
                             key={i}
                             name={event.lesson}
@@ -17,12 +19,22 @@ const Events = props => {
                             date={event.date}
                         />
                         <FloatersOfEvents id={event.event_id} />
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary mr-4 mb-2 mt-4"
+
+                        <Popup
+                            trigger={
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-primary mr-4 mb-2 mt-4"
+                                >
+                                    volunteer
+                                </button>
+                            }
+                            position="right center"
+                            modal
                         >
-                            volunteer
-                        </button>
+                            <VolunteerForm event_id={event.event_id} />
+                        </Popup>
+
                         <a
                             className="btn btn-link mr-4 mb-2 mt-4"
                             href={`/event/${event.event_id}`}
