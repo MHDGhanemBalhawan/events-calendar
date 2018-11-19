@@ -1,5 +1,6 @@
 import React from "react";
 import Event from "./Event";
+import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 
 export default class SingleEvent extends React.Component {
     state = {
@@ -22,6 +23,7 @@ export default class SingleEvent extends React.Component {
                         description={this.state.event.description}
                         date={this.state.event.date}
                     />
+                    <FloatersOfEvents id={this.props.match.params.id} />
                 </div>
             </div>
         );

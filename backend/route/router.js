@@ -225,7 +225,7 @@ router.post("/events-floaters", (httpRequest, httpResponse) => {
 router.delete("/events-floaters/:id", (httpRequest, httpResponse) => {
   const id = httpRequest.params.id;
   const query = {
-    text: `DELETE FROM public.floaters_events_tbl WHERE floaters_events_tbl.floaters_events_id = ${id};`
+    text: `DELETE FROM public.floaters_events_tbl WHERE floaters_events_tbl.floater_id = ${id};`
   };
   pool.query(query, (dbError, dbResult) => {
     if (dbError) {
