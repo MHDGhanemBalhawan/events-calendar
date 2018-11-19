@@ -7,6 +7,10 @@ h2 a , h2 a:hover{
 .nav-item{
     background-color:#4286f4;
     transition: all 0.3s ease-out;
+    width:200px;
+    position: relative;
+    bottom: 0;
+    top:200px
 }
 li:hover{
     transition: all 0.3s ease-out;
@@ -15,4 +19,13 @@ li:hover{
 }
 a:link{
     text-decoration: none;
+}
+.containe{
+    background-image:url('https://i.postimg.cc/1Rd2MykD/DSC-0457.jpg');
+    background-repeat: no-repeat;
+    height: 700px;
+}
+.event-title{
+    margin-top:250px;
+    color:white;
 }
