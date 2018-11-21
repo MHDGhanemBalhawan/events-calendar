@@ -9,7 +9,7 @@ const admin = () => (
                 <h1 className="mb-3 mt-5">Admin</h1>
             </div>
         </div>
-        <ul className="nav flex-column">
+        <ul className="nav justify-content-between ">
             <li className="nav-item text-center shadow-lg p-3 mb-5 rounded">
                 <h2> <a href="/admin/floaters">Floaters</a></h2>
             </li>
