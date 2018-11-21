@@ -110,6 +110,15 @@ export default class VolunteerForm extends React.Component {
                         );
                     })}
                 </ul>
+                <p>
+                    You not here!{" "}
+                    <a href="/admin/floaters/addToList">
+                        {" "}
+                        <button className="btn btn-outline-primary mr-4 mb-2 ">
+                            Add Yourself to CYF volunteer list{" "}
+                        </button>
+                    </a>
+                </p>
             </div>
         );
     }

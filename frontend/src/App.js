@@ -9,6 +9,7 @@ import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/Public/MainPage";
 import Floaters from "./Components/Admin/Floaters/Floaters.js";
 import SingleEvent from "./Components/Public/SingleEvent";
+import AddToVolunteerList from "./Components/Public/AddToVolunteerList.js";
 
 class App extends Component {
     state = {
@@ -52,6 +53,10 @@ class App extends Component {
                         <Route
                             path="/admin/floaters/add"
                             component={FloaterForm}
+                        />
+                        <Route
+                            path="/admin/floaters/addToList"
+                            component={AddToVolunteerList}
                         />
                         <Route
                             exact
