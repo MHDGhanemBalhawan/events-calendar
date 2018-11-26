@@ -15,7 +15,7 @@ export default class FloatersOfEvents extends React.Component {
         return (
             <div>
                 <table>
-                    <tbody class="table table-borderless">
+                    <tbody className="table table-borderless">
                         <td> Floaters: </td>
                         {this.state.mentors.map(floater => {
                             return (
