@@ -29,7 +29,6 @@
 }
 .headerEvents {
   display: inline;
-  /* border-bottom: 1px solid rgb(41, 41, 43); */
   border: none !important;
   background-color: #f2f2f2;
 }
