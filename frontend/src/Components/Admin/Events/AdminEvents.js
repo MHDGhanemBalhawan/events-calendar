@@ -10,21 +10,26 @@ import VolunteerForm from "../Floaters/FloaterToVolunteer";
 const Adminevents = props => {
     return (
         <div className="events">
-            <h1>Events</h1>
-            <Popup
-                trigger={
-                    <button className="btn btn-outline-primary mb-2">
-                        add a new event
+            <div className="dummyDiv" />
+            <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+                <h1 className="myHeader ml-5 ">Events</h1>
+                <Popup
+                    trigger={
+                        <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
+                            add a new event
+                        </button>
+                    }
+                    position="right center"
+                    modal
+                >
+                    <Form name={props.name} />
+                </Popup>
+                <a href="/admin">
+                    <button className="btn btn-outline-primary ml-2 mb-2 sideButton">
+                        Back
                     </button>
-                }
-                position="right center"
-                modal
-            >
-                <Form name={props.name} />
-            </Popup>
-            <button className="btn btn-outline-primary ml-2 mb-2">
-                <a href="/admin">Back</a>
-            </button>
+                </a>
+            </div>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>
