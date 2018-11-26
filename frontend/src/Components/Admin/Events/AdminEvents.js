@@ -10,9 +10,9 @@ import VolunteerForm from "../Floaters/FloaterToVolunteer";
 const Adminevents = props => {
     return (
         <div className="events">
-            <div class="dummyDiv" />
-            <div class="fixed-top card headerEvents  mt=0 pt-3 pb-3">
-                <h1 class="myHeader ml-5 ">Events</h1>
+            <div className="dummyDiv" />
+            <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+                <h1 className="myHeader ml-5 ">Events</h1>
                 <Popup
                     trigger={
                         <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
