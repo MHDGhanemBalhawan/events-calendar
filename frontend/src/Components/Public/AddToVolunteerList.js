@@ -1,7 +1,5 @@
 import React from "react";
 import Message from "../Message/Message";
-// import Popup from "reactjs-popup";
-// import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 
 export default class AddToVolunteerList extends React.Component {
     state = { message: false };
