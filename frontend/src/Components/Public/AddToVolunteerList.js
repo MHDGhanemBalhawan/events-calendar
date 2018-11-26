@@ -104,27 +104,6 @@ export default class AddToVolunteerList extends React.Component {
                                         >
                                             Back
                                         </a>
-                                        {/* <Popup
-                                            trigger={
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-outline-primary mr-4 mb-2 mt-4"
-                                                >
-                                                    Back
-                                                </button>
-                                            }
-                                            position="right center"
-                                            modal
-                                        >
-                                            <VolunteerForm
-                                                event_id={event.event_id}
-                                            />
-                                            <VolunteerForm
-                                                event_id={
-                                                    VolunteerForm.event_id
-                                                }
-                                            />
-                                        </Popup> */}
                                     </div>
                                 </div>
                             </div>
