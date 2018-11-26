@@ -66,7 +66,6 @@ export default class Floaters extends React.Component {
                         {this.state.mentors.map(floater => {
                             return <tr key={floater.floater_id}>
                                     <td />
-                                    {/* <th scope="row">{floater.floater_id}</th> */}
                                     <td>{floater.floater_fname}</td>
                                     <td>{floater.floater_surname}</td>
                                     <td>{floater.floater_email}</td>
