@@ -4,5 +4,31 @@
   padding: 2px;
 }
 .event_titles {
-margin: 20px;
+  margin: 20px;
+}
+.linkEdit {
+  padding-left: 0 !important;
+  color: #80b3ff !important;
+}
+.linkDelete {
+  padding-left: 0 !important;
+  color: #feacac !important;
+}
+.sideButton {
+  float: right;
+}
+.myHeader {
+  display: inline;
+}
+.topBar {
+  float: top;
+  position: fixed;
+}
+.dummyDiv {
+  margin-top: 5em;
+}
+.headerEvents {
+  display: inline;
+  border: none !important;
+  background-color: #f2f2f2;
 }
