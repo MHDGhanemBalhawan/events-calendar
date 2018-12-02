@@ -8,7 +8,10 @@ import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 const Events = props => {
     return (
         <div className="events">
-            <h1 className="event_titles">Events</h1>
+            <div className="dummyDiv" />
+            <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+                <h1 className="myHeader ml-5 ">Events</h1>
+            </div>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>
