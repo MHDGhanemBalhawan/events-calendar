@@ -4,14 +4,14 @@ import "../../Style/Event.css";
 import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 import Popup from "reactjs-popup";
 import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
+import NavBar from "../NavBar";
 
 const Events = props => {
     return (
         <div className="events">
-            <div className="dummyDiv" />
-            <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+            <NavBar>
                 <h1 className="myHeader ml-5 ">Events</h1>
-            </div>
+            </NavBar>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>
