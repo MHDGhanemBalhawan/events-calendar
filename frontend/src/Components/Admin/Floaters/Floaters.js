@@ -37,10 +37,7 @@ export default class Floaters extends React.Component {
 
     render() {
         return <div className="container mt-2">
-                {/* <div className="dummyDiv" />
-                <div className="fixed-top card headerEvents  mt=0"> */}
                 <NavBar>
-                    {/* <div className=" mb-3 mt-3 sameRowBtn container"> */}
                     <h1 className="myHeader ml-5">
                         Code Your Future Floaters
                     </h1>
@@ -54,15 +51,12 @@ export default class Floaters extends React.Component {
                         Back
                         </button>
                 </a>
-                    {/* </div> */}
                 </NavBar>
-                {/* </div> */}
                 <Message show={this.state.message} status="success" message="New floater is deleted" />
 
                 <table className="table table-striped table-dark">
                     <tbody>
                         <tr>
-                            {/* <th scope="col">Floater id</th> */}
                             <th />
                             <th scope="col">First Name </th>
                             <th scope="col">Surname </th>
