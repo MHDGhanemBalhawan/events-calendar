@@ -1,11 +1,11 @@
 import React from "react";
 import "../../Style/MainPage.css";
+import NavBar from "../NavBar";
 const mainPage = () => (
     <div className="container">
-        <div className="dummyDiv" />
-        <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+        <NavBar>
             <h1 className="myHeader ml-5">Events Calendar</h1>
-        </div>
+        </NavBar>
         <div>
             <ul className="nav flex-column">
                 <h2>
