@@ -2,11 +2,13 @@ import React from "react";
 import "../../Style/MainPage.css";
 const mainPage = () => (
     <div className="container">
-        <div className="row justify-content-md-center title">
-            <div className="col-md-auto">
-                <h1 className="mb-3 mt-5">Events Calendar</h1>
-            </div>
+        <div className="dummyDiv" />
+        <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+            <h1 className="myHeader ml-5">
+                Events Calendar
+            </h1>
         </div>
+        
         <div>
             <ul className="nav flex-column">
                 <h2>
