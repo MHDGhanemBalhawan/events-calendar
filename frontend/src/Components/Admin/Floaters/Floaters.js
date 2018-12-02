@@ -4,6 +4,7 @@ import Message from "../../Message/Message";
 import Popup from "reactjs-popup";
 import EditFloater from "./EditFloater.js";
 import "../../../Style/Events.css";
+import FloaterForm from "./FloaterForm";
 
 export default class Floaters extends React.Component {
     state = {
@@ -46,12 +47,17 @@ export default class Floaters extends React.Component {
                                 Back
                             </button>
                         </a>
-                        <a href="/admin/floaters/add">
-                            {" "}
-                            <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5">
-                                Add Floaters
-                            </button>
-                        </a>
+                        <Popup
+                            trigger={
+                                <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
+                                    Add a New Floater
+                                </button>
+                            }
+                            position="right center"
+                            modal
+                        >
+                            <FloaterForm />
+                        </Popup>
                     </div>
                 </div>
                 <Message
