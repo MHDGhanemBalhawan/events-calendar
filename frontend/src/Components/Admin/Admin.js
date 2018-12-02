@@ -3,30 +3,31 @@ import "../../Style/MainPage.css";
 
 const admin = () => (
     <div className="container">
-        <div className="row justify-content-md-center title">
-            <div className="col-md-auto">
-                <h1 className="mb-3 mt-5">Admin</h1>
-            </div>
+        <div className="dummyDiv" />
+        <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+            <h1 className="myHeader ml-5 ">Admin</h1>
         </div>
-        <ul className="nav flex-column">
-            <h2>
-                {" "}
-                <a href="/admin/floaters">
-                    <li className="nav-item text-center shadow-lg p-3 mb-5 rounded">
-                        Floaters
-                    </li>
-                </a>
-            </h2>
+        <div>
+            <ul className="nav flex-column">
+                <h2>
+                    {" "}
+                    <a href="/admin/floaters">
+                        <li className="nav-item text-center shadow-lg p-3 mb-5 rounded">
+                            Floaters
+                        </li>
+                    </a>
+                </h2>
 
-            <h2>
-                {" "}
-                <a href="/admin/events">
-                    <li className="nav-item text-center shadow-lg p-3 mb-5 rounded">
-                        Events
-                    </li>
-                </a>
-            </h2>
-        </ul>
+                <h2>
+                    {" "}
+                    <a href="/admin/events">
+                        <li className="nav-item text-center shadow-lg p-3 mb-5 rounded">
+                            Events
+                        </li>
+                    </a>
+                </h2>
+            </ul>
+        </div>
     </div>
 );
 
