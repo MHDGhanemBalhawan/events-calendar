@@ -88,11 +88,10 @@ export default class EditFloater extends React.Component {
                                     >
                                         Email
                                     </label>
-                                    <textarea
+                                    <input
                                         className="textarea form-control form-control-lg"
                                         defaultValue={this.props.floater_email}
                                         ref={this.floater_emailRef}
-                                        rows="8"
                                     />
                                     <br />
                                     <div
@@ -108,7 +107,7 @@ export default class EditFloater extends React.Component {
 
                                         <a
                                             className="btn btn-primary "
-                                            href="/admin/events"
+                                            href="/admin/floaters"
                                         >
                                             Back
                                         </a>
