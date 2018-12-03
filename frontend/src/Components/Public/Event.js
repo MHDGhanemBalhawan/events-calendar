@@ -9,7 +9,6 @@ const Event = props => {
             <h1>{props.name}</h1>
             <p>Description: {props.description}</p>
             <div>Date: {moment(props.date).format("Do MMMM  YYYY")}</div>
-            <div>Floaters: {props.floaters}</div>   
         </span>
     );
 };
