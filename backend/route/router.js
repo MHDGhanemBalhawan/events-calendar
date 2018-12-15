@@ -16,7 +16,9 @@ pool.connect(function(connectionError, poolClient) {
     console.log("Connected to database");
   }
 });
-
+router.get("/health", (httpRequest, httpResponse) => {
+  httpResponse.status(200).send("OK");
+});
 // events router
 
 router.get("/events", (httpRequest, httpResponse) => {

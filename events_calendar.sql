@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.14
 -- Dumped by pg_dump version 9.5.14
 
--- Started on 2018-11-13 19:58:39 GMT
+-- Started on 2018-12-15 13:16:36 GMT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,7 +18,7 @@ SET row_security = off;
 
 DROP DATABASE events_calendar;
 --
--- TOC entry 2173 (class 1262 OID 24944)
+-- TOC entry 2177 (class 1262 OID 25112)
 -- Name: events_calendar; Type: DATABASE; Schema: -; Owner: -
 --
 
@@ -45,7 +45,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2175 (class 0 OID 0)
+-- TOC entry 2179 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
@@ -53,10 +53,12 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+SET default_tablespace = '';
+
 SET default_with_oids = false;
 
 --
--- TOC entry 181 (class 1259 OID 24945)
+-- TOC entry 181 (class 1259 OID 25113)
 -- Name: events_tbl; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -69,7 +71,7 @@ CREATE TABLE public.events_tbl (
 
 
 --
--- TOC entry 182 (class 1259 OID 24951)
+-- TOC entry 182 (class 1259 OID 25119)
 -- Name: events_tbl_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -82,7 +84,7 @@ CREATE SEQUENCE public.events_tbl_id_seq
 
 
 --
--- TOC entry 2176 (class 0 OID 0)
+-- TOC entry 2180 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: events_tbl_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -91,7 +93,7 @@ ALTER SEQUENCE public.events_tbl_id_seq OWNED BY public.events_tbl.event_id;
 
 
 --
--- TOC entry 183 (class 1259 OID 24953)
+-- TOC entry 183 (class 1259 OID 25121)
 -- Name: floaters_events_tbl; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -103,7 +105,7 @@ CREATE TABLE public.floaters_events_tbl (
 
 
 --
--- TOC entry 184 (class 1259 OID 24956)
+-- TOC entry 184 (class 1259 OID 25124)
 -- Name: floaters_events_tbl_floaters_events_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -116,7 +118,7 @@ CREATE SEQUENCE public.floaters_events_tbl_floaters_events_id_seq
 
 
 --
--- TOC entry 2177 (class 0 OID 0)
+-- TOC entry 2181 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: floaters_events_tbl_floaters_events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -125,20 +127,20 @@ ALTER SEQUENCE public.floaters_events_tbl_floaters_events_id_seq OWNED BY public
 
 
 --
--- TOC entry 185 (class 1259 OID 24958)
+-- TOC entry 185 (class 1259 OID 25126)
 -- Name: floaters_tbl; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.floaters_tbl (
     floater_id integer NOT NULL,
-    floater_fname character(255),
-    floater_surname character(255),
-    floater_email character varying(255)
+    floater_fname character(255) NOT NULL,
+    floater_surname character(255) NOT NULL,
+    floater_email character varying(255) NOT NULL
 );
 
 
 --
--- TOC entry 186 (class 1259 OID 24964)
+-- TOC entry 186 (class 1259 OID 25132)
 -- Name: floaters_floaters_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -151,7 +153,7 @@ CREATE SEQUENCE public.floaters_floaters_id_seq
 
 
 --
--- TOC entry 2178 (class 0 OID 0)
+-- TOC entry 2182 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: floaters_floaters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -160,7 +162,7 @@ ALTER SEQUENCE public.floaters_floaters_id_seq OWNED BY public.floaters_tbl.floa
 
 
 --
--- TOC entry 187 (class 1259 OID 24966)
+-- TOC entry 187 (class 1259 OID 25134)
 -- Name: floaters_tbl_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -173,7 +175,7 @@ CREATE SEQUENCE public.floaters_tbl_seq
 
 
 --
--- TOC entry 2033 (class 2604 OID 24968)
+-- TOC entry 2033 (class 2604 OID 25136)
 -- Name: event_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -181,7 +183,7 @@ ALTER TABLE ONLY public.events_tbl ALTER COLUMN event_id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 2034 (class 2604 OID 24969)
+-- TOC entry 2034 (class 2604 OID 25137)
 -- Name: floaters_events_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -189,7 +191,7 @@ ALTER TABLE ONLY public.floaters_events_tbl ALTER COLUMN floaters_events_id SET 
 
 
 --
--- TOC entry 2035 (class 2604 OID 24970)
+-- TOC entry 2035 (class 2604 OID 25138)
 -- Name: floater_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -197,45 +199,11 @@ ALTER TABLE ONLY public.floaters_tbl ALTER COLUMN floater_id SET DEFAULT nextval
 
 
 --
--- TOC entry 2161 (class 0 OID 24945)
+-- TOC entry 2165 (class 0 OID 25113)
 -- Dependencies: 181
 -- Data for Name: events_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (1, 'HTML/CSS 1', '2018-12-01', 'HTML Syntax
-You''re already familiar with HTML code from your application process. If you want to refresh your memory, read this quick guide to the HTML syntax.
-
-Example HTML/CSS Project
-In today''s class, we will begin adapting styles on this example website. We''ll review some of the HTML/CSS basics you already encountered during your application process and learn some new techniques. By the end of the third lesson, we will have worked together to improve the example site on the left so that it looks like the screenshot on the right.
-
-Semantic HTML
-When writing HTML code, you can use different tags to describe the content. Is it a navigation menu, a paragraph of text, or an article? By using the correct tag, you help search engines like Google or screen readers for the visually impaired.
-
-CSS Selectors
-During your application process, you became familiar with CSS selectors. We''ll review the basic selectors and then practice combining these to modify our button styles.
-
-Pseudo Classes
-There are also things called "pseudo" classes. In this section, we''ll introduce you to the common pseudo classes for assigning styles to interactions, such as moving your mouse over a link.
-
-Box Model
-In CSS, everything is a box. An image is a box. A link is a box. The area around this box can be modified with properites that we call margins, borders and padding. Here''s a diagram showing what the box looks like.
-
-Git Conflicts
-As a professional, you''ll usually need to work alongside other coders to build an app or website. We use version control to coordinate changes and manage any conflicts that arise. Git is a version control system which helps us merge code that we''ve been working on separately into one common codebase.
-
-');
-INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (3, 'HTML/CSS 2', '2018-12-08', 'Responsive Web Design
-When we build for the web, we''re making websites that can be viewed in a phone, a laptop, a tablet and more. To ensure we''re presenting a website that''s easy to use on any device, we use Responsive Web Design techniques to modify how content is displayed depending on the viewport.
-
-Media Queries
-As you learned in your homework assignment, media queries help us change the display of our content depending on the size of the viewport.
-
-Flexbox
-Flexbox is a name for a set of CSS layout rules which are supported in newer browsers. They allow you to apply rules to elements to place them side-by-side and re-arrange them. You just specify how you want your elements arranged and the browser will scale this arrangement depending on the screen size and device used for viewing.
-
-Most flexbox rules are applied to the container, to tell it how to arrange its children. However, there are some rules that can be applied to children as well.
-
-');
 INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (4, 'HTML/CSS 3', '2018-12-15', 'HTML/CSS Frameworks
 A design framework is a collection of re-usable code snippets which you can use to build a website. It is sometimes called a "design system", "style guide", or "pattern library", and will usually consist of three things:
 
@@ -319,19 +287,35 @@ AJAX
 ');
 INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (10, 'JavaScript Core II - 3', '2018-02-01', 'More JS in the Browser
 Fork, clone and follow the instructions on the Dom-AJAX workshop repo');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (1, 'HTML/CSS 1', '2018-12-01', 'HTML Syntax
+You''re already familiar with HTML code from your application process. If you want to refresh your memory, read this quick guide to the HTML syntax.
+
+');
+INSERT INTO public.events_tbl (event_id, lesson, event_date, description) VALUES (3, 'HTML/CSS 23', '2018-12-08', 'Responsive Web Design
+When we build for the web, we''re making websites that can be viewed in a phone, a laptop, a tablet and more. To ensure we''re presenting a website that''s easy to use on any device, we use Responsive Web Design techniques to modify how content is displayed depending on the viewport.
+
+Media Queries
+As you learned in your homework assignment, media queries help us change the display of our content depending on the size of the viewport.
+
+Flexbox
+Flexbox is a name for a set of CSS layout rules which are supported in newer browsers. They allow you to apply rules to elements to place them side-by-side and re-arrange them. You just specify how you want your elements arranged and the browser will scale this arrangement depending on the screen size and device used for viewing.
+
+Most flexbox rules are applied to the container, to tell it how to arrange its children. However, there are some rules that can be applied to children as well.
+
+');
 
 
 --
--- TOC entry 2179 (class 0 OID 0)
+-- TOC entry 2183 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: events_tbl_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.events_tbl_id_seq', 10, true);
+SELECT pg_catalog.setval('public.events_tbl_id_seq', 11, true);
 
 
 --
--- TOC entry 2163 (class 0 OID 24953)
+-- TOC entry 2167 (class 0 OID 25121)
 -- Dependencies: 183
 -- Data for Name: floaters_events_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -347,7 +331,7 @@ INSERT INTO public.floaters_events_tbl (floaters_events_id, event_id, floater_id
 
 
 --
--- TOC entry 2180 (class 0 OID 0)
+-- TOC entry 2184 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: floaters_events_tbl_floaters_events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -356,42 +340,42 @@ SELECT pg_catalog.setval('public.floaters_events_tbl_floaters_events_id_seq', 11
 
 
 --
--- TOC entry 2181 (class 0 OID 0)
+-- TOC entry 2185 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: floaters_floaters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.floaters_floaters_id_seq', 2, true);
+SELECT pg_catalog.setval('public.floaters_floaters_id_seq', 5, true);
 
 
 --
--- TOC entry 2165 (class 0 OID 24958)
+-- TOC entry 2169 (class 0 OID 25126)
 -- Dependencies: 185
 -- Data for Name: floaters_tbl; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (3, 'Nadine                                                                                                                                                                                                                                                         ', 'Dodo                                                                                                                                                                                                                                                           ', 'nadine@hotmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (5, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nsmith@yahoo.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (6, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nsmith@yahoo.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (4, 'Nany                                                                                                                                                                                                                                                           ', 'Colen                                                                                                                                                                                                                                                          ', 'namy@yahoo.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (7, 'Nany                                                                                                                                                                                                                                                           ', 'Colen                                                                                                                                                                                                                                                          ', 'namy@yahoo.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (8, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (9, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (10, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (11, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (12, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (13, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (14, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (15, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (16, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (17, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (18, 'Steve                                                                                                                                                                                                                                                          ', 'Bbbbb                                                                                                                                                                                                                                                          ', 'stevebalhawan@gmail.com');
-INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (2, 'Steve                                                                                                                                                                                                                                                          ', 'Balhawan                                                                                                                                                                                                                                                       ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (4, 'F                                                                                                                                                                                                                                                              ', 'T                                                                                                                                                                                                                                                              ', 'F@hotmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (6, 'Naty                                                                                                                                                                                                                                                           ', 'K                                                                                                                                                                                                                                                              ', 'nsmith@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (12, 'Steve                                                                                                                                                                                                                                                          ', 'H                                                                                                                                                                                                                                                              ', 'Bbalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (10, 'Steve                                                                                                                                                                                                                                                          ', 'G                                                                                                                                                                                                                                                              ', 'Abalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (7, 'Nany                                                                                                                                                                                                                                                           ', 'C                                                                                                                                                                                                                                                              ', 'namy@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (9, 'Steve                                                                                                                                                                                                                                                          ', 'A                                                                                                                                                                                                                                                              ', 'stevebalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (11, 'Steve                                                                                                                                                                                                                                                          ', 'V                                                                                                                                                                                                                                                              ', 'Cbalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (13, 'Steve                                                                                                                                                                                                                                                          ', 'Y                                                                                                                                                                                                                                                              ', 'Xbalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (14, 'Steve                                                                                                                                                                                                                                                          ', 'F                                                                                                                                                                                                                                                              ', 'Ybalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (15, 'Steve                                                                                                                                                                                                                                                          ', 'W                                                                                                                                                                                                                                                              ', 'Mbalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (16, 'Steve                                                                                                                                                                                                                                                          ', 'Q                                                                                                                                                                                                                                                              ', 'Ibalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (5, 'Naty                                                                                                                                                                                                                                                           ', 'Smith                                                                                                                                                                                                                                                          ', 'nnsmith@yahoo.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (8, 'Steve                                                                                                                                                                                                                                                          ', 'B                                                                                                                                                                                                                                                              ', 'Sbalhawan@gmail.com');
 INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (1, 'Daleel                                                                                                                                                                                                                                                         ', 'Haji                                                                                                                                                                                                                                                           ', 'daleel@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (3, 'Nadine                                                                                                                                                                                                                                                         ', 'dhdf                                                                                                                                                                                                                                                           ', 'tnadine@hotmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (17, 'Steve                                                                                                                                                                                                                                                          ', 'P                                                                                                                                                                                                                                                              ', 'Lbalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (18, 'Steve                                                                                                                                                                                                                                                          ', 'J                                                                                                                                                                                                                                                              ', 'Obalhawan@gmail.com');
+INSERT INTO public.floaters_tbl (floater_id, floater_fname, floater_surname, floater_email) VALUES (2, 'Steve                                                                                                                                                                                                                                                          ', 'Balhawan                                                                                                                                                                                                                                                       ', 'Rbalhawan@gmail.com');
 
 
 --
--- TOC entry 2182 (class 0 OID 0)
+-- TOC entry 2186 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: floaters_tbl_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -400,7 +384,7 @@ SELECT pg_catalog.setval('public.floaters_tbl_seq', 1, false);
 
 
 --
--- TOC entry 2037 (class 2606 OID 24972)
+-- TOC entry 2037 (class 2606 OID 25140)
 -- Name: events_tbl_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -409,7 +393,7 @@ ALTER TABLE ONLY public.events_tbl
 
 
 --
--- TOC entry 2044 (class 2606 OID 24974)
+-- TOC entry 2044 (class 2606 OID 25142)
 -- Name: floater_id_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -418,7 +402,7 @@ ALTER TABLE ONLY public.floaters_tbl
 
 
 --
--- TOC entry 2040 (class 2606 OID 24976)
+-- TOC entry 2040 (class 2606 OID 25144)
 -- Name: floaters_events_id; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -427,7 +411,16 @@ ALTER TABLE ONLY public.floaters_events_tbl
 
 
 --
--- TOC entry 2042 (class 2606 OID 24978)
+-- TOC entry 2046 (class 2606 OID 25185)
+-- Name: unique_email; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.floaters_tbl
+    ADD CONSTRAINT unique_email UNIQUE (floater_email);
+
+
+--
+-- TOC entry 2042 (class 2606 OID 25146)
 -- Name: unique_event_floater; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -436,7 +429,16 @@ ALTER TABLE ONLY public.floaters_events_tbl
 
 
 --
--- TOC entry 2038 (class 1259 OID 24979)
+-- TOC entry 2048 (class 2606 OID 25177)
+-- Name: unique_fname_surname; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.floaters_tbl
+    ADD CONSTRAINT unique_fname_surname UNIQUE (floater_fname, floater_surname);
+
+
+--
+-- TOC entry 2038 (class 1259 OID 25147)
 -- Name: fki_event_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -444,7 +446,7 @@ CREATE INDEX fki_event_id ON public.floaters_events_tbl USING btree (event_id);
 
 
 --
--- TOC entry 2045 (class 2606 OID 24980)
+-- TOC entry 2049 (class 2606 OID 25148)
 -- Name: event_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -453,7 +455,7 @@ ALTER TABLE ONLY public.floaters_events_tbl
 
 
 --
--- TOC entry 2046 (class 2606 OID 24985)
+-- TOC entry 2050 (class 2606 OID 25153)
 -- Name: floater_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -461,7 +463,7 @@ ALTER TABLE ONLY public.floaters_events_tbl
     ADD CONSTRAINT floater_id FOREIGN KEY (floater_id) REFERENCES public.floaters_tbl(floater_id) ON DELETE CASCADE;
 
 
--- Completed on 2018-11-13 19:58:39 GMT
+-- Completed on 2018-12-15 13:16:36 GMT
 
 --
 -- PostgreSQL database dump complete
