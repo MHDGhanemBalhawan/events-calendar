@@ -7,8 +7,9 @@ const Event = props => {
     return (
         <span>
             <h1>{props.name}</h1>
-            <p>Description: {props.description}</p>
-            <div>Date: {moment(props.date).format("Do MMMM  YYYY")}</div>
+            <h1>{props.description}</h1>
+            <div>{moment(props.date).format("Do MMMM  YYYY")}</div>
+            <div>Location: 4 Pentonville Rd, London N1 9HF</div>
         </span>
     );
 };
