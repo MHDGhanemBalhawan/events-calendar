@@ -4,11 +4,14 @@ import "../../Style/Event.css";
 import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 import Popup from "reactjs-popup";
 import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
+import NavBar from "../NavBar";
 
 const Events = props => {
     return (
         <div className="events">
-            <h1 className="event_titles">Events</h1>
+            <NavBar>
+                <h1 className="myHeader ml-5 ">Events</h1>
+            </NavBar>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>

@@ -3,6 +3,10 @@ import "../../../Style/Event.css";
 import Message from "../../Message/Message";
 import Popup from "reactjs-popup";
 import EditFloater from "./EditFloater.js";
+import "../../../Style/Events.css";
+import FloaterForm from "./FloaterForm";
+import NavBar from "../../NavBar";
+
 
 export default class Floaters extends React.Component {
     state = {
@@ -33,29 +37,26 @@ export default class Floaters extends React.Component {
 
     render() {
         return <div className="container mt-2">
-                <Message show={this.state.message} status="success" message="New floater is deleted" />
-
-                <div className=" mb-4 mt-4 sameRowBtn container">
-                    <h1 className="h3 mb-4 myHeader">
+                <NavBar>
+                    <h1 className="myHeader ml-5">
                         Code Your Future Floaters
                     </h1>
-
-                    <a href="/admin">
-                        <button className="btn btn-outline-primary mr-4 mb-2 sideButton">
-                            Back
+                    <Popup trigger={<button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
+                                Add a New Floater
+                            </button>} position="right center" modal>
+                        <FloaterForm />
+                    </Popup>
+                <a href="/admin">
+                    <button className="btn btn-outline-primary ml-2 mb-2 sideButton">
+                        Back
                         </button>
-                    </a>
-                        <a href="/admin/floaters/add">
-                            {" "}
-                            <button className="btn btn-outline-primary mr-4 mb-2 sideButton">
-                                Add Floaters
-                            </button>
-                        </a>
-                </div>
+                </a>
+                </NavBar>
+                <Message show={this.state.message} status="success" message="New floater is deleted" />
+
                 <table className="table table-striped table-dark">
                     <tbody>
                         <tr>
-                            {/* <th scope="col">Floater id</th> */}
                             <th />
                             <th scope="col">First Name </th>
                             <th scope="col">Surname </th>

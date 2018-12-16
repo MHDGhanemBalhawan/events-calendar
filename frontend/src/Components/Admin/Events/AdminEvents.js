@@ -6,12 +6,13 @@ import "../../../Style/Event.css";
 import EditForm from "./EditEvent.js";
 import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
 import VolunteerForm from "../Floaters/FloaterToVolunteer";
+import NavBar from "../../NavBar";
+
 
 const Adminevents = props => {
     return (
         <div className="events">
-            <div className="dummyDiv" />
-            <div className="fixed-top card headerEvents  mt=0 pt-3 pb-3">
+            <NavBar>
                 <h1 className="myHeader ml-5 ">Events</h1>
                 <Popup
                     trigger={
@@ -29,7 +30,7 @@ const Adminevents = props => {
                         Back
                     </button>
                 </a>
-            </div>
+            </NavBar>
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>
