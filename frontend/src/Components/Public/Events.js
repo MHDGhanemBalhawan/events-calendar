@@ -15,12 +15,13 @@ const Events = props => {
             {props.events.map(function(event, i) {
                 return (
                     <div className="event" key={i}>
-                        <Event
-                            key={i}
-                            name={event.lesson}
-                            // description={event.description}
-                            date={event.date}
-                        />
+                        <a href={`/event/${event.event_id}`} alt={event.lesson}>
+                            <Event
+                                key={i}
+                                name={event.lesson} // description={event.description}
+                                date={event.date}
+                            />
+                        </a>
                         <FloatersOfEvents id={event.event_id} />
 
                         <Popup
