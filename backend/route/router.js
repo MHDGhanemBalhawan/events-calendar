@@ -19,7 +19,7 @@ pool.connect(function(connectionError, poolClient) {
 
 // events router
 
-router.get("/events", (httpRequest, httpResponse) => {
+router.get("/api/events", (httpRequest, httpResponse) => {
   pool.query(
     "SELECT event_id, lesson, event_date as date, description FROM events_tbl",
     (dbError, dbResult) => {

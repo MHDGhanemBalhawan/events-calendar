@@ -17,20 +17,20 @@ class App extends Component {
     };
 
     componentDidMount() {
-        fetch("/events")
+        fetch("/api/events")
             .then(res => res.json())
             .then(data => {
                 this.setState({ events: data });
             });
     }
 
-componentDidUpdate(){
-    fetch("/events")
-        .then(res => res.json())
-        .then(data => {
-            this.setState({ events: data });
-        });
-}
+    // componentDidUpdate() {
+    //     fetch("/events")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             this.setState({ events: data });
+    //         });
+    // }
 
     toDelete(id) {
         fetch("/events/" + id, {
@@ -50,7 +50,6 @@ componentDidUpdate(){
                 <BrowserRouter>
                     <div>
                         <Route
-                            exact
                             path="/events"
                             render={() => <Events events={this.state.events} />}
                         />
