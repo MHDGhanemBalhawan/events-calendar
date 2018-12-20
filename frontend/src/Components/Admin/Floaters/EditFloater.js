@@ -48,7 +48,9 @@ export default class EditFloater extends React.Component {
                     status="success"
                     message="Floater Has Been Edited"
                 />
-                <h1 className="text-center mb-3">Editing this Event</h1>
+                <h1 className="text-center mb-3 text-dark">
+                    Editing this Floater's Details
+                </h1>
                 <form>
                     <div className="form-group">
                         <div className="container">
@@ -56,7 +58,7 @@ export default class EditFloater extends React.Component {
                                 <div className="col-md-8 m-auto">
                                     <br />
                                     <label
-                                        className="font-weight-bold"
+                                        className="font-weight-bold text-dark"
                                         htmlFor="event name"
                                     >
                                         First Name
@@ -69,7 +71,7 @@ export default class EditFloater extends React.Component {
                                     />
                                     <br />
                                     <label
-                                        className="font-weight-bold"
+                                        className="font-weight-bold text-dark"
                                         htmlFor="event date"
                                     >
                                         Surname
@@ -83,16 +85,15 @@ export default class EditFloater extends React.Component {
                                     />
                                     <br />
                                     <label
-                                        className="font-weight-bold"
+                                        className="font-weight-bold text-dark"
                                         htmlFor="event description"
                                     >
                                         Email
                                     </label>
-                                    <textarea
+                                    <input
                                         className="textarea form-control form-control-lg"
                                         defaultValue={this.props.floater_email}
                                         ref={this.floater_emailRef}
-                                        rows="8"
                                     />
                                     <br />
                                     <div
@@ -108,7 +109,7 @@ export default class EditFloater extends React.Component {
 
                                         <a
                                             className="btn btn-primary "
-                                            href="/admin/events"
+                                            href="/admin/floaters"
                                         >
                                             Back
                                         </a>
