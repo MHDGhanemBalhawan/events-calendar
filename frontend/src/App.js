@@ -26,7 +26,7 @@ class App extends Component {
 
 
     toDelete(id) {
-        fetch("/events/" + id, {
+        fetch("api/events/" + id, {
             method: "delete"
         }).then(response => {
             if (response.status === 500) {
