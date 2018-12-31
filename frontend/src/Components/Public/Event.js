@@ -6,12 +6,12 @@ import "../../Style/Events.css";
 const Event = props => {
     return (
         <span>
-            <h4 className="float-right font-italic">
+            <h1 className=" text-center">{props.name}</h1>
+            <div className=" text-center">TicketMaster offices</div>
+            <h4 className=" font-italic float-right ">
                 {moment(props.date).format("Do MMMM  YYYY")}
             </h4>
-            <h1>{props.name}</h1>
             <p>{props.description}</p>
-            <div>Location: TicketMaster offices</div>
         </span>
     );
 };
