@@ -22,7 +22,7 @@ export default class EditFloater extends React.Component {
             floater_surname: this.floater_surnameRef.current.value,
             floater_email: this.floater_emailRef.current.value
         };
-        console.log(this.props.floater_id);
+     
         fetch("/api/mentors/" + this.props.floater_id, {
             headers: {
                 Accept: "application/json",
