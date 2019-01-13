@@ -2,7 +2,7 @@ import React from "react";
 
 export default class FloatersOfEvents extends React.Component {
     state = { mentors: [] };
-
+    // componentWillReceiveProps
     componentDidMount() {
         fetch("/api/events-floaters/event/" + this.props.id)
             .then(res => res.json())

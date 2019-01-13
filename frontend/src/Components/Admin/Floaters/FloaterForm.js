@@ -35,6 +35,7 @@ export default class FloaterForm extends React.Component {
                 this.setState({ message: true });
             })
             .catch(error => console.error(error));
+        console.log("error");
     };
 
     render() {
