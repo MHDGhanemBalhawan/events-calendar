@@ -1,4 +1,21 @@
-.event {
-  margin-bottom: 30px;
-  padding: 20px;
+.event-grid-container {
+  padding: 60px;
+  margin: 20px;
+  width: 80%;
+  background: #f2f2f2;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+  .event-grid-container {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-item {
+  /* border: 1px solid black; */
+  text-align: left;
 }
