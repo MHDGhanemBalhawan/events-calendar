@@ -20,7 +20,7 @@ class App extends Component {
         fetch("/events")
             .then(res => res.json())
             .then(data => {
-                this.setState({ events: data });
+                this.setState({ events: data.events });
             });
     }
 

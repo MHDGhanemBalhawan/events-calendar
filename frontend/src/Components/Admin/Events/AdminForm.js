@@ -14,8 +14,8 @@ export default class Form extends React.Component {
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            lesson: this.lessonRef.current.value,
-            event_date: this.event_dateRef.current.value,
+            name: this.lessonRef.current.value,
+            date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
         fetch("/events", {

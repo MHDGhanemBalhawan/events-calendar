@@ -7,6 +7,8 @@ import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 import NavBar from "../NavBar";
 
 const Events = props => {
+    console.log(props.events);
+
     return (
         <div className="events">
             <NavBar>
