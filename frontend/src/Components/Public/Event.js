@@ -3,26 +3,28 @@ import moment from "moment";
 import "../../Style/Event.css";
 import "../../Style/Events.css";
 import Popup from "reactjs-popup";
-import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
+// import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 
-const Event = ({ event }) => {
+const Event = props => {
     return (
         <span className="event-grid-container">
             <div className="grid-item">
                 <h4 className="  pt-5 ml-4">
-                    {moment(event.date).format("Do MMMM  YYYY")}
+                    {moment(props.date).format("Do MMMM  YYYY")}
                 </h4>
             </div>
             <div className="grid-item">
-                <h1 className="font-weight-bold">{event.lesson}</h1>
+                <h1 className="font-weight-bold">{props.lesson}</h1>
                 <div className=" ">London, TicketMaster offices</div>
-                <a
-                    className="btn btn-link"
-                    href={`/event/${event.event_id}`}
-                    alt={event.lesson}
-                >
-                    class details and address
-                </a>
+                <small>
+                    <a
+                        className=" btn-link "
+                        href={`/event/${props.event_id}`}
+                        alt={props.lesson}
+                    >
+                        class details and address
+                    </a>
+                </small>
                 <div className=" ">
                     <Popup
                         trigger={
@@ -36,16 +38,18 @@ const Event = ({ event }) => {
                         position="right center"
                         modal
                     >
-                        <VolunteerForm event_id={event.event_id} />
+                        {/* <VolunteerForm event_id={props.event_id} /> */}
                     </Popup>
                 </div>
             </div>
 
             <div className="grid-item ">
-                <p className="pt-5 mr-4">{5} more volunteers needed</p>
+                <p className="pt-5 mr-4">
+                    <strong>{5}</strong> more volunteers needed
+                </p>
             </div>
 
-            {/* <p>{event.description}</p> */}
+            <p>{props.description}</p>
         </span>
     );
 };
