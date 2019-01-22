@@ -5,7 +5,6 @@ import "../../Style/Event.css";
 import NavBar from "../NavBar";
 import "../../Style/Events.css";
 
-
 const Events = props => {
     return (
         <div className="events">
@@ -18,15 +17,16 @@ const Events = props => {
                     //     className=" bg-light text-dark border-bottom border-right"
                     //     key={i}
                     // >
-                        <Event
-                            key={i}
-                            name={event.lesson}
-                            event={event}
-                            date={
-                                event.date // description={event.description}
-                            }
-                        />
-                        //  <FloatersOfEvents id={event.event_id} />
+                    <Event
+                        key={i}
+                        event_id={event.event_id}
+                        lesson={event.lesson}
+                        event={event}
+                        date={
+                            event.date // description={event.description}
+                        }
+                    />
+                    //  <FloatersOfEvents id={event.event_id} />
                     // </div>
                 );
             })}
