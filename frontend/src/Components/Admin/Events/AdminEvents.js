@@ -7,6 +7,7 @@ import EditForm from "./EditEvent.js";
 import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
 import VolunteerForm from "../Floaters/FloaterToVolunteer";
 import NavBar from "../../NavBar";
+import AdminEvent from "./AdminEvent.js";
 
 
 const Adminevents = props => {
@@ -32,11 +33,11 @@ const Adminevents = props => {
                 </a>
             </NavBar>
             {props.events.map(function(event, i) {
-                return (
-                    <div className="event" key={i}>
-                        <Event
+                return <div className="event" key={i}>
+                        <AdminEvent key={i} lesson={event.lesson} description={event.description} date={event.date} event_id={event.event_id} />
+                        {/* <Event
                             key={i}
-                            name={event.lesson}
+                            lesson={event.lesson}
                             description={event.description}
                             date={event.date}
                             event_id={event.event_id}
@@ -75,17 +76,13 @@ const Adminevents = props => {
                                 description={event.description}
                                 id={event.event_id}
                             />
-                        </Popup>
-                        <button
-                            className="btn btn-danger  mr-4 mb-2 mt-4"
-                            onClick={function() {
+                        </Popup>*/}
+                        <button className="btn btn-danger  mr-4 mb-2 mt-4" onClick={function() {
                                 props.deleteEvent(event.event_id);
-                            }}
-                        >
+                            }}>
                             Delete
                         </button>
-                    </div>
-                );
+                    </div>;
             })}
         </div>
     );

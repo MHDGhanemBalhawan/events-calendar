@@ -35,7 +35,7 @@ const Event = props => {
                 </p>
             </div>
 
-            <p>{props.description}</p>
+            {/* <p>{props.description}</p> */}
         </span>;
 };
 
