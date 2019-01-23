@@ -2,16 +2,16 @@
   padding: 60px;
   margin: 20px;
   width: 80%;
-  background: #FCFDFD;
+  background: #fcfdfd;
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   border-right: solid rgb(238, 234, 234);
   border-bottom: solid rgb(230, 227, 227);
   border-width: 1px;
+  grid-gap: 10px;
 }
-.grid-item-description{
-width: 300%;
+.grid-item-description {
 }
 
 @media (max-width: 600px) {
@@ -26,3 +26,16 @@ width: 300%;
   /* border: 1px solid black; */
   text-align: left;
 }
+
+/* 
+.a-address a:link {
+  color: black;
+}
+
+.a-address a:visited {
+  color: black;
+}
+
+.a-address a:hover {
+  color: rgb(57, 80, 182);
+} */
