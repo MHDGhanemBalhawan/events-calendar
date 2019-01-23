@@ -18,8 +18,7 @@ export default class SingleEvent extends React.Component {
     }
 
     render() {
-        return (
-            <div className="events mt-2">
+        return <div className="events mt-2">
                 <NavBar>
                     <h1 className="myHeader ml-5"> Events</h1>
                     <a href="/events">
@@ -31,7 +30,7 @@ export default class SingleEvent extends React.Component {
 
                 <span className="event-grid-container">
                     <div className="grid-item">
-                        <h4 className="  pt-5 ml-4">
+                    <h4 className="mt-2">
                             {moment(this.state.event.date).format(
                                 "Do MMMM  YYYY"
                             )}
@@ -41,7 +40,7 @@ export default class SingleEvent extends React.Component {
                         <h1 className="font-weight-bold">
                             {this.state.event.lesson}
                         </h1>
-                        <div className=" ">London, TicketMaster offices</div>
+
                         {/* <a className="btn btn-link" href={`/event/${this.state.event_id}`} alt={this.state.lesson}>
                             class details and address
                         </a>
@@ -54,26 +53,33 @@ export default class SingleEvent extends React.Component {
                         </div> */}
                     </div>
                     <div className="grid-item ">
-                        <p className="pt-5 mr-4">
+                        <p className="mr-4 mt-2">
                             <strong>{5}</strong> more volunteers needed
                         </p>
                     </div>
+                    <div className="grid-item ">
+                    <p className="a-address " >
+                            <a href="">
+                                London
+                                <br />
+                                ticket Master
+                                <br />
+                                55 Road Road
+                            </a>
+                        </p>
+                    </div>
 
-                    <div className=" grid-item-description mt-4 text-left">
-                        <p>{this.state.event.description}</p>
+                    <div className="grid-item text-left">
+                        <p>
+                            {this.state.event.description}
+                            <br />
+                            <a href="">For Syllabus Click here</a>
+                        </p>
+
                         <div className="text-center">
-                            <Popup
-                                trigger={
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary mt-4"
-                                    >
+                            <Popup trigger={<button type="button" className="btn btn-primary mt-4">
                                         Volunteer
-                                    </button>
-                                }
-                                position="right center"
-                                modal
-                            >
+                                    </button>} position="right center" modal>
                                 {/* <VolunteerForm event_id={props.event_id} /> */}
                             </Popup>
                         </div>
@@ -87,7 +93,6 @@ export default class SingleEvent extends React.Component {
                         Back
                     </a>
                     </div> */}
-            </div>
-        );
+            </div>;
     }
 }
