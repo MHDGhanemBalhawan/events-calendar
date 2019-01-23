@@ -11,8 +11,7 @@
   border-width: 1px;
   grid-gap: 10px;
 }
-.grid-item-description {
-}
+
 
 @media (max-width: 600px) {
   .event-grid-container {
@@ -23,11 +22,10 @@
 }
 
 .grid-item {
-  /* border: 1px solid black; */
   text-align: left;
 }
 
-/* 
+/* to edit link color in address later if needed 
 .a-address a:link {
   color: black;
 }

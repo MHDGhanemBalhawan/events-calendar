@@ -80,19 +80,11 @@ export default class SingleEvent extends React.Component {
                             <Popup trigger={<button type="button" className="btn btn-primary mt-4">
                                         Volunteer
                                     </button>} position="right center" modal>
-                                {/* <VolunteerForm event_id={props.event_id} /> */}
+                                {/* <VolunteerForm event_id={props.event_id} /> to show volunteers name if needed again*/}
                             </Popup>
                         </div>
                     </div>
                 </span>
-
-                {/* <div className="event">
-                    <Event name={this.state.event.lesson} description={this.state.event.description} date={this.state.event.date} />
-                    <FloatersOfEvents id={this.props.match.params.id} />
-                    <a className="btn btn-primary " href="/events">
-                        Back
-                    </a>
-                    </div> */}
             </div>;
     }
 }
