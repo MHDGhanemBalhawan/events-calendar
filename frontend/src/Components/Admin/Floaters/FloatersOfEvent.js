@@ -15,14 +15,16 @@ export default class FloatersOfEvents extends React.Component {
         return (
             <div>
                 <table>
-                    <tbody className="table table-borderless">
-                        <td> Volunteers: </td>
+                    <tbody className="">
+                        <p>
+                            <strong>Volunteered:</strong>
+                        </p>
                         {this.state.mentors.map(floater => {
                             return (
-                                <td key={floater.floaters_events_id}>
+                                <p key={floater.floaters_events_id}>
                                     {floater.floater_fname}{" "}
-                                    {floater.floater_surname.split("")[0]}
-                                </td>
+                                    {floater.floater_surname}
+                                </p>
                             );
                         })}
                     </tbody>

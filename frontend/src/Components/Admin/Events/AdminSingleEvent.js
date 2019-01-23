@@ -1,9 +1,11 @@
 import React from "react";
-import Event from "./Event";
+// import Event from "./Event";
 // import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
-import NavBar from "../NavBar";
+import NavBar from "../../NavBar";
 import moment from "moment";
 import Popup from "reactjs-popup";
+import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
+import EditForm from "./EditEvent.js";
 
 export default class SingleEvent extends React.Component {
     state = {
@@ -22,9 +24,9 @@ export default class SingleEvent extends React.Component {
             <div className="events mt-2">
                 <NavBar>
                     <h1 className="myHeader ml-5"> Events</h1>
-                    <a href="/events">
+                    <a href="/admin/events">
                         <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
-                            Back to results
+                            Back to All Events
                         </button>
                     </a>
                 </NavBar>
@@ -42,16 +44,7 @@ export default class SingleEvent extends React.Component {
                             {this.state.event.lesson}
                         </h1>
 
-                        {/* <a className="btn btn-link" href={`/event/${this.state.event_id}`} alt={this.state.lesson}>
-                            class details and address
-                        </a>
-                        <div className=" ">
-                            <Popup trigger={<button type="button" className="btn btn-primary mt-4">
-                                        Volunteer
-                                    </button>} position="right center" modal>
-                                <VolunteerForm event_id={props.event_id} />
-                            </Popup>
-                        </div> */}
+                        
                     </div>
                     <div className="grid-item ">
                         <p className="mt-2">
@@ -76,23 +69,60 @@ export default class SingleEvent extends React.Component {
                             <br />
                             <a href="">For Syllabus Click here</a>
                         </p>
-
-                        <div className="text-center">
+                    </div>
+                    <div className="grid-item">
+                        <FloatersOfEvents id={this.props.match.params.id} />
+                    </div>
+                    <div className="grid-item"> <button
+                        className="btn btn-danger  mr-4 mb-2 mt-4"
+                        // onClick={function () {
+                        //     props.deleteEvent(event.event_id);
+                        // }}
+                    >
+                        Delete
+                        </button></div>
+                    <div className="grid-item">
+                        {" "}
+                        <div className="grid-item">
                             <Popup
                                 trigger={
                                     <button
                                         type="button"
-                                        className="btn btn-primary mt-4"
+                                        className="btn btn btn-warning mr-4 mb-2 mt-4"
                                     >
-                                        Volunteer
+                                        Edit
                                     </button>
                                 }
                                 position="right center"
                                 modal
                             >
-                                {/* <VolunteerForm event_id={props.event_id} /> to show volunteers name if needed again*/}
+                                <EditForm
+                                    name={this.state.event.name}
+                                    lesson={this.state.event.lesson}
+                                    event_date={this.state.event.date}
+                                    description={this.state.event.description}
+                                    id={this.state.event.event_id}
+                                />
                             </Popup>
+
+                            
                         </div>
+                    </div>
+                    <div className="grid-item ">
+                        <Popup
+                            trigger={
+                                <button
+                                    type="button"
+                                    className="btn btn-primary mt-4"
+                                >
+                                    Add Volunteers
+                                </button>
+                            }
+                            position="right center"
+                            modal
+                        >
+                            {/* <VolunteerForm event_id={props.event_id} /> to show volunteers name if needed again*/}
+                        </Popup>
                     </div>
                 </span>
             </div>

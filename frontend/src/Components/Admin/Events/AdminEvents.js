@@ -5,10 +5,9 @@ import Form from "./AdminForm";
 import "../../../Style/Event.css";
 import EditForm from "./EditEvent.js";
 import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
-import VolunteerForm from "../Floaters/FloaterToVolunteer";
+// import Form from "../Floaters/FloaterToVolunteer";
 import NavBar from "../../NavBar";
 import AdminEvent from "./AdminEvent.js";
-
 
 const Adminevents = props => {
     return (
@@ -33,8 +32,16 @@ const Adminevents = props => {
                 </a>
             </NavBar>
             {props.events.map(function(event, i) {
-                return <div className="event" key={i}>
-                        <AdminEvent key={i} lesson={event.lesson} description={event.description} date={event.date} event_id={event.event_id} />
+                return (
+                    <div className="event" key={i}>
+                        <AdminEvent
+                            key={i}
+                            lesson={event.lesson}
+                            description={event.description}
+                            date={event.date}
+                            event_id={event.event_id}
+                            // deleteEvent={this.toDelete}
+                        />
                         {/* <Event
                             key={i}
                             lesson={event.lesson}
@@ -77,12 +84,16 @@ const Adminevents = props => {
                                 id={event.event_id}
                             />
                         </Popup>*/}
-                        <button className="btn btn-danger  mr-4 mb-2 mt-4" onClick={function() {
+                        {/* <button
+                            className="btn btn-danger  mr-4 mb-2 mt-4"
+                            onClick={function() {
                                 props.deleteEvent(event.event_id);
-                            }}>
+                            }}
+                        >
                             Delete
-                        </button>
-                    </div>;
+                        </button> */}
+                    </div>
+                );
             })}
         </div>
     );

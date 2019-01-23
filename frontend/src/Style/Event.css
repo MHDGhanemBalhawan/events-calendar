@@ -1,5 +1,5 @@
 .event-grid-container {
-  padding: 60px;
+  padding: 40px;
   margin: 20px;
   width: 80%;
   background: #fcfdfd;
@@ -12,7 +12,6 @@
   grid-gap: 10px;
 }
 
-
 @media (max-width: 600px) {
   .event-grid-container {
     width: 100%;
@@ -23,6 +22,7 @@
 
 .grid-item {
   text-align: left;
+  margin-left: 5px;
 }
 
 /* to edit link color in address later if needed 
