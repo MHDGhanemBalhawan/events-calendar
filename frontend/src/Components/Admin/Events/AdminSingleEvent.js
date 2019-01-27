@@ -6,11 +6,13 @@ import moment from "moment";
 import Popup from "reactjs-popup";
 import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
 import EditForm from "./EditEvent.js";
+import Form from "./AdminForm";
 
 export default class SingleEvent extends React.Component {
     state = {
         event: []
     };
+
     componentDidMount() {
         fetch(`/events/${this.props.match.params.id}`)
             .then(res => res.json())
@@ -19,13 +21,37 @@ export default class SingleEvent extends React.Component {
             });
     }
 
+    toDelete(id) {
+        console.log("id" + id);
+        fetch("/api/events/" + id, {
+            method: "delete"
+        }).then(response => {
+            if (response.status === 500) {
+                alert("Error: Failed to delete event");
+            } else {
+                this.props.history.push("/admin/events");
+            }
+        });
+    }
+
     render() {
         return (
             <div className="events mt-2">
                 <NavBar>
                     <h1 className="myHeader ml-5"> Events</h1>
+                    <Popup
+                        trigger={
+                            <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
+                                add a new event
+                            </button>
+                        }
+                        position="right center"
+                        modal
+                    >
+                        <Form />
+                    </Popup>
                     <a href="/admin/events">
-                        <button className="btn btn-outline-primary mb-2 ml-2 sideButton mr-5 ">
+                        <button className="btn btn-outline-primary ml-2 mb-2 sideButton">
                             Back to All Events
                         </button>
                     </a>
@@ -38,13 +64,14 @@ export default class SingleEvent extends React.Component {
                                 "Do MMMM  YYYY"
                             )}
                         </h4>
+                        <small>
+                            <p>12pm-6pm</p>
+                        </small>
                     </div>
                     <div className="grid-item">
                         <h1 className="font-weight-bold">
                             {this.state.event.lesson}
                         </h1>
-
-                        
                     </div>
                     <div className="grid-item ">
                         <p className="mt-2">
@@ -73,14 +100,19 @@ export default class SingleEvent extends React.Component {
                     <div className="grid-item">
                         <FloatersOfEvents id={this.props.match.params.id} />
                     </div>
-                    <div className="grid-item"> <button
-                        className="btn btn-danger  mr-4 mb-2 mt-4"
-                        // onClick={function () {
-                        //     props.deleteEvent(event.event_id);
-                        // }}
-                    >
-                        Delete
-                        </button></div>
+                    <div className="grid-item">
+                        {" "}
+                        <button
+                            className="btn btn-danger  mr-4 mb-2 mt-4" // onClick={function () {
+                            //     props.deleteEvent(event.event_id);
+                            // }}
+                            onClick={() => {
+                                this.toDelete(this.state.event.event_id);
+                            }}
+                        >
+                            Delete
+                        </button>
+                    </div>
                     <div className="grid-item">
                         {" "}
                         <div className="grid-item">
@@ -104,8 +136,6 @@ export default class SingleEvent extends React.Component {
                                     id={this.state.event.event_id}
                                 />
                             </Popup>
-
-                            
                         </div>
                     </div>
                     <div className="grid-item ">
