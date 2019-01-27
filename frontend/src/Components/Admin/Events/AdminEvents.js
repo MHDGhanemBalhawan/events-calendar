@@ -1,10 +1,10 @@
 import React from "react";
-import Event from "../../Public/Event.js";
+// import Event from "../../Public/Event.js";
 import Popup from "reactjs-popup";
 import Form from "./AdminForm";
 import "../../../Style/Event.css";
-import EditForm from "./EditEvent.js";
-import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
+// import EditForm from "./EditEvent.js";
+// import FloatersOfEvents from "../Floaters/FloatersOfEvent.js";
 // import Form from "../Floaters/FloaterToVolunteer";
 import NavBar from "../../NavBar";
 import AdminEvent from "./AdminEvent.js";
@@ -23,7 +23,7 @@ const Adminevents = props => {
                     position="right center"
                     modal
                 >
-                    <Form name={props.name} />
+                    <Form  />
                 </Popup>
                 <a href="/admin">
                     <button className="btn btn-outline-primary ml-2 mb-2 sideButton">

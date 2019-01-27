@@ -23,7 +23,7 @@ const AdminEvent = props => {
                         href={`/admin/event/${props.event_id}`}
                         alt={props.lesson}
                     >
-                        Edit This Event
+                        See or Edit This Event
                     </a>
                 </small>
                 <div className=" ">

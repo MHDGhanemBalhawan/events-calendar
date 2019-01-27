@@ -1,5 +1,5 @@
 import React from "react";
-import Event from "./Event";
+// import Event from "./Event";
 // import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 import NavBar from "../NavBar";
 import moment from "moment";
@@ -18,8 +18,7 @@ export default class SingleEvent extends React.Component {
     }
 
     render() {
-        return (
-            <div className="events mt-2">
+        return <div className="events mt-2">
                 <NavBar>
                     <h1 className="myHeader ml-5"> Events</h1>
                     <a href="/events">
@@ -36,6 +35,9 @@ export default class SingleEvent extends React.Component {
                                 "Do MMMM  YYYY"
                             )}
                         </h4>
+                        <small>
+                            <p>12pm-6pm</p>
+                        </small>
                     </div>
                     <div className="grid-item">
                         <h1 className="font-weight-bold">
@@ -78,24 +80,14 @@ export default class SingleEvent extends React.Component {
                         </p>
 
                         <div className="text-center">
-                            <Popup
-                                trigger={
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary mt-4"
-                                    >
+                            <Popup trigger={<button type="button" className="btn btn-primary mt-4">
                                         Volunteer
-                                    </button>
-                                }
-                                position="right center"
-                                modal
-                            >
+                                    </button>} position="right center" modal>
                                 {/* <VolunteerForm event_id={props.event_id} /> to show volunteers name if needed again*/}
                             </Popup>
                         </div>
                     </div>
                 </span>
-            </div>
-        );
+            </div>;
     }
 }
