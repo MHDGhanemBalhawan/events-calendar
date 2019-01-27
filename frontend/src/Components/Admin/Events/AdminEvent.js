@@ -3,8 +3,6 @@ import moment from "moment";
 import "../../../Style/Event.css";
 import "../../../Style/Events.css";
 import Popup from "reactjs-popup";
-// import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
-import EditForm from "./EditEvent.js";
 
 const AdminEvent = props => {
     return (

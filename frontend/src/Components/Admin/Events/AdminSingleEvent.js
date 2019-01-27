@@ -1,6 +1,4 @@
 import React from "react";
-// import Event from "./Event";
-// import FloatersOfEvents from "../Admin/Floaters/FloatersOfEvent.js";
 import NavBar from "../../NavBar";
 import moment from "moment";
 import Popup from "reactjs-popup";
@@ -103,9 +101,7 @@ export default class SingleEvent extends React.Component {
                     <div className="grid-item">
                         {" "}
                         <button
-                            className="btn btn-danger  mr-4 mb-2 mt-4" // onClick={function () {
-                            //     props.deleteEvent(event.event_id);
-                            // }}
+                            className="btn btn-danger  mr-4 mb-2 mt-4"
                             onClick={() => {
                                 this.toDelete(this.state.event.event_id);
                             }}

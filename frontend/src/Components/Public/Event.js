@@ -3,7 +3,6 @@ import moment from "moment";
 import "../../Style/Event.css";
 import "../../Style/Events.css";
 import Popup from "reactjs-popup";
-// import VolunteerForm from "../Admin/Floaters/FloaterToVolunteer";
 
 const Event = props => {
     return (
@@ -48,8 +47,6 @@ const Event = props => {
                     <strong>{5}</strong> more volunteers needed
                 </p>
             </div>
-
-            {/* <p>{props.description}</p> */}
         </span>
     );
 };
