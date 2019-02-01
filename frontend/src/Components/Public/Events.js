@@ -14,14 +14,18 @@ const Events = props => {
             </NavBar>
             {props.events.map(function(event, i) {
                 return (
-                    <div className="event" key={i}>
-                        <Event
-                            key={i}
-                            name={event.lesson}
-                            description={event.description}
-                            date={event.date}
-                        />
-                        <FloatersOfEvents id={event.event_id} />
+                    <div className="event bg-light text-dark" key={i}>
+                        <a href={`/event/${event.event_id}`} alt={event.lesson}>
+                            <Event
+                                key={i}
+                                name={event.lesson}
+                                date={
+                                    event.date // description={event.description}
+                                }
+                            />
+
+                            <FloatersOfEvents id={event.event_id} />
+                        </a>
 
                         <Popup
                             trigger={
