@@ -22,9 +22,9 @@ class App extends Component {
             .then(res => res.json())
             .then(data => {
                 this.setState({ events: data });
+                
             });
     }
-
 
     toDelete(id) {
         fetch("api/events/" + id, {
@@ -49,7 +49,10 @@ class App extends Component {
                         />
                         <Route exact path="/" component={mainPage} />
                         <Route path="/event/:id" component={SingleEvent} />
-                        <Route path="/admin/event/:id" component={AdminSingleEvent} />
+                        <Route
+                            path="/admin/event/:id"
+                            component={AdminSingleEvent}
+                        />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
                         <Route
