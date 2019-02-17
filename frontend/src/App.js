@@ -9,6 +9,7 @@ import FloaterForm from "./Components/Admin/Floaters/FloaterForm";
 import mainPage from "./Components/Public/MainPage";
 import Floaters from "./Components/Admin/Floaters/Floaters.js";
 import SingleEvent from "./Components/Public/SingleEvent";
+import AdminSingleEvent from "./Components/Admin/Events/AdminSingleEvent";
 import AddToVolunteerList from "./Components/Public/AddToVolunteerList.js";
 
 class App extends Component {
@@ -48,6 +49,7 @@ class App extends Component {
                         />
                         <Route exact path="/" component={mainPage} />
                         <Route path="/event/:id" component={SingleEvent} />
+                        <Route path="/admin/event/:id" component={AdminSingleEvent} />
                         <Route exact path="/admin" component={Admin} />
                         <Route path="/admin/events/add" component={Form} />
                         <Route
