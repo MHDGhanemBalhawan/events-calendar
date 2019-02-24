@@ -3,8 +3,8 @@ const express = require("express");
 const router = require("./route/router");
 const morgan = require("morgan");
 
-app.use(morgan("tiny"));
 const app = express();
+app.use(morgan("tiny"));
 app.use(express.static(`${__dirname}/../frontend/build`));
 
 app.use("/", router);
