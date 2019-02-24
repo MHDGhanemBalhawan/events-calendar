@@ -36,10 +36,10 @@ pool.connect(function(connectionError, poolClient) {
 router.get(EVENTS_BASE_URL, (httpRequest, httpResponse) => {
   // console.log(EVENTS_BASE_URL);
   pool.query(
-    "SELECT event_id, lesson, event_date as date, description FROM events_tbl ORDER BY event_date ASC",
+    "SELECT event_id, name, event_date as date, description FROM events_tbl ORDER BY event_date ASC",
     (dbError, dbResult) => {
       if (dbError) {
-        httpResponse.status(400).send(dbError);
+        httpResponse.status(500).send(dbError);
       } else {
         httpResponse.status(200).send(dbResult.rows);
       }
@@ -50,10 +50,11 @@ router.get(EVENTS_BASE_URL, (httpRequest, httpResponse) => {
 router.get(`${EVENTS_BASE_URL}/:id`, function(httpRequest, httpResponse) {
   const id = httpRequest.params.id;
   const query = {
-    text: `SELECT event_id, lesson, event_date as date, description FROM events_tbl WHERE events_tbl.event_id = ${id};`
+    text: `SELECT event_id, name, event_date as date, description FROM events_tbl WHERE events_tbl.event_id = ${id};`
   };
   pool.query(query, (dbError, dbResult) => {
     if (dbError) {
+      console.log(dbError);
       httpResponse.status(500).send(dbError);
     } else {
       httpResponse.status(200).send(dbResult.rows[0]);
@@ -64,9 +65,9 @@ router.get(`${EVENTS_BASE_URL}/:id`, function(httpRequest, httpResponse) {
 router.post(`${EVENTS_BASE_URL}`, (httpRequest, httpResponse) => {
   const query = {
     text:
-      "INSERT INTO events_tbl(lesson, event_date, description) VALUES($1, $2, $3)",
+      "INSERT INTO events_tbl(name, event_date, description) VALUES($1, $2, $3)",
     values: [
-      httpRequest.body.lesson,
+      httpRequest.body.name,
       httpRequest.body.event_date,
       httpRequest.body.description
     ]
@@ -98,9 +99,9 @@ router.put(`${EVENTS_BASE_URL}/:id`, (httpRequest, httpResponse) => {
   const id = httpRequest.params.id;
   const query = {
     text:
-      "UPDATE public.events_tbl SET lesson = $1, event_date = $2, description = $3 WHERE event_id = $4;",
+      "UPDATE public.events_tbl SET name= $1, event_date = $2, description = $3 WHERE event_id = $4;",
     values: [
-      httpRequest.body.lesson,
+      httpRequest.body.name,
       httpRequest.body.event_date,
       httpRequest.body.description,
       id
