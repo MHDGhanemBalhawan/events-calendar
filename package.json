@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/reber12/events-calender/issues"
   },
-  "homepage": "https://github.com/reber12/events-calender#readme"
+  "homepage": "https://github.com/reber12/events-calender#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
