@@ -4,7 +4,10 @@
   "description": "Event Calander Application for CYF",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd ./backend && npm start",
+    "frontend": "cd ./frontend && npm start",
+    "start": "yarn server && yarn frontend"
   },
   "repository": {
     "type": "git",
