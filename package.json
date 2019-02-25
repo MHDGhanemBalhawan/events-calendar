@@ -4,9 +4,9 @@
   "description": "Event Calander Application for CYF",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm install && npm build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build",
-    "postinstall": "npm build",
     "start": "cd ./backend && node server.js"
   },
   "repository": {
