@@ -4,19 +4,17 @@
   "description": "The backend of CYF volunteers",
   "main": "index.js",
   "scripts": {
-    "postinstall": "ng build --aot --target=production",
     "heroku-prebuild": "cd ./backend && npm install",
-    "heroku-postbuild": "npm run build",
     "server": "cd ./backend && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd ./frontend && npm run build",
     "start": "cd ./backend && node server.js"
   },
   "engines": {
-    "npm": "5.6.0",
-    "node": "8.10.0"
+    "node": "8.9.0",
+    "npm": "5.5.1",
+    "yarn": "1.5.1"
   },
-  "author": "Behnaz",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
