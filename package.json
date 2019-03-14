@@ -1,23 +1,20 @@
 {
-  "name": "events-calender",
+  "name": "backend-eventcalender",
   "version": "1.0.0",
-  "description": "Event Calander Application for CYF",
+  "description": "The backend of CYF volunteers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build",
-   "postinstall": "npm install && npm build"
-    "start": "cd ./backend && node server.js"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/reber12/events-calender.git"
-  },
-  "author": "",
+  "author": "Behnaz",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/reber12/events-calender/issues"
-  },
-  "homepage": "https://github.com/reber12/events-calender#readme",
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4",
+    "pg": "^7.5.0"
+  }
 }
