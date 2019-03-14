@@ -4,6 +4,7 @@
   "description": "The backend of CYF volunteers",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm install && npm build",
     "heroku-prebuild": "cd ./backend && npm install",
     "server": "cd ./backend && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
