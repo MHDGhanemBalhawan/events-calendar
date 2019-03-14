@@ -4,6 +4,7 @@
   "description": "The backend of CYF volunteers",
   "main": "index.js",
   "scripts": {
+    "postinstall": "ng build --aot --target=production",
     "heroku-prebuild": "cd ./backend && npm install",
     "heroku-postbuild": "npm run build",
     "server": "cd ./backend && npm install",
