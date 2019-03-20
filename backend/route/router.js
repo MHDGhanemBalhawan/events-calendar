@@ -18,8 +18,9 @@ const FLOATERS_BASE_URL = buildurl("api", "mentors");
 
 const EVENTS_FLOATERS_BASE_URL = buildurl("api", "events-floaters");
 
-var connectionString =
-  "postgres://eventsuser:eventsuser147@localhost:5432/events_calendar";
+var connectionString = "postgres://zeveayoktigtcq:a47c559c5701a913ca1a";
+//"postgres://eventsuser:eventsuser147@localhost:5432/events_calendar";
+//("postgres://zeveayoktigtcq:a47c559c5701a913ca1a");
 
 const pool = new Pool({ connectionString: connectionString });
 
