@@ -6,10 +6,10 @@ const morgan = require("morgan");
 const app = express();
 app.use(morgan("tiny"));
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("../frontend/build"));
-// }
-// app.use(express.static(`${__dirname}/../frontend/build`));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../frontend/build"));
+}
+app.use(express.static(`${__dirname}/../frontend/build`));
 
 app.use("/", router);
 
