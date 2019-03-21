@@ -23,7 +23,7 @@ export default class SingleEvent extends React.Component {
                 </NavBar>
                 <div className="event">
                     <Event
-                        name={this.state.event.lesson}
+                        name={this.state.event.name}
                         description={this.state.event.description}
                         date={this.state.event.date}
                     />

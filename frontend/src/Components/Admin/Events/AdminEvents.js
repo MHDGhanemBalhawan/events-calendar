@@ -36,7 +36,7 @@ const Adminevents = props => {
                     <div className="event" key={i}>
                         <Event
                             key={i}
-                            name={event.lesson}
+                            name={event.name}
                             description={event.description}
                             date={event.date}
                             event_id={event.event_id}
@@ -69,8 +69,7 @@ const Adminevents = props => {
                             modal
                         >
                             <EditForm
-                                name={props.name}
-                                lesson={event.lesson}
+                                name={event.name}
                                 event_date={event.date}
                                 description={event.description}
                                 id={event.event_id}

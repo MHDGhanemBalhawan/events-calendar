@@ -25,6 +25,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+    "proxy": "https://cyf-events-backend.herokuapp.com//",
   "browserslist": [
     ">0.2%",
     "not dead",

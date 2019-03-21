@@ -3,14 +3,14 @@ import Message from "../../Message/Message";
 
 export default class EditForm extends React.Component {
     state = {
-        lesson: "",
+        name: "",
         event_date: "",
         description: "",
         message: false
     };
     constructor(props) {
         super(props);
-        this.lessonRef = React.createRef();
+        this.nameRef = React.createRef();
         this.event_dateRef = React.createRef();
         this.descriptionRef = React.createRef();
     }
@@ -18,7 +18,7 @@ export default class EditForm extends React.Component {
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            lesson: this.lessonRef.current.value,
+            name: this.namenRef.current.value,
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
@@ -31,7 +31,7 @@ export default class EditForm extends React.Component {
             body: JSON.stringify(body)
         })
             .then(() => {
-                this.lessonRef.current.value = "";
+                this.nameRef.current.value = "";
                 this.event_dateRef.current.value = "";
                 this.descriptionRef.current.value = "";
                 this.setState({ message: true });
@@ -64,8 +64,8 @@ export default class EditForm extends React.Component {
 
                                     <input
                                         className="input form-control form-control-lg"
-                                        defaultValue={this.props.lesson}
-                                        ref={this.lessonRef}
+                                        defaultValue={this.props.name}
+                                        ref={this.nameRef}
                                     />
                                     <br />
                                     <label

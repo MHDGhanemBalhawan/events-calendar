@@ -19,7 +19,7 @@ const Events = props => {
                     <div className="event" key={i}>
                         <EventNoDesc
                             key={i}
-                            name={event.lesson}
+                            name={event.name}
                             date={event.date}
                         />
                         <FloatersOfEvents id={event.event_id} />
@@ -42,7 +42,7 @@ const Events = props => {
                         <a
                             className="btn btn-link mr-4 mb-2 mt-4"
                             href={`/event/${event.event_id}`}
-                            alt={event.lesson}
+                            alt={event.name}
                         >
                             Read more
                         </a>

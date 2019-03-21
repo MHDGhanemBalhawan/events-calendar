@@ -6,7 +6,7 @@ export default class Form extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.lessonRef = React.createRef();
+        this.nameRef = React.createRef();
         this.event_dateRef = React.createRef();
         this.descriptionRef = React.createRef();
     }
@@ -14,7 +14,7 @@ export default class Form extends React.Component {
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            lesson: this.lessonRef.current.value,
+            name: this.nameRef.current.value,
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
@@ -27,7 +27,7 @@ export default class Form extends React.Component {
             body: JSON.stringify(body)
         })
             .then(response => {
-                this.lessonRef.current.value = "";
+                this.nameRef.current.value = "";
                 this.event_dateRef.current.value = "";
                 this.descriptionRef.current.value = "";
                 this.setState({ message: true });
@@ -60,7 +60,7 @@ export default class Form extends React.Component {
                                     <input
                                         className="input form-control form-control-lg"
                                         placeholder="Events name"
-                                        ref={this.lessonRef}
+                                        ref={this.nameRef}
                                     />
                                     <br />
                                     <label
