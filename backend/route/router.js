@@ -34,10 +34,23 @@ pool.connect(function(connectionError, poolClient) {
   }
 });
 
+router.use((httpRequest, httpResponse, next) => {
+  httpRequest.header("Access-Control-Allow-Origin", "*");
+  httpRequest.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Request-With, Content-Type, Accept, Authorization"
+  );
+  if (httpRequest.method === "OPTIONS") {
+    httpRequest.header(
+      "Access-Control-Allow-Methods",
+      "PUT, GET, PUT, DELETE, PATCH"
+    );
+    return httpResponse.status(200).json({});
+  }
+});
 // events router
 
 router.get(EVENTS_BASE_URL, (httpRequest, httpResponse) => {
-  // console.log(EVENTS_BASE_URL);
   pool.query(
     "SELECT event_id, name, event_date as date, description FROM events_tbl ORDER BY event_date ASC",
     (dbError, dbResult) => {
