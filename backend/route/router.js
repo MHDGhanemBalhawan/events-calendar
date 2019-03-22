@@ -18,7 +18,8 @@ const FLOATERS_BASE_URL = buildurl("api", "mentors");
 
 const EVENTS_FLOATERS_BASE_URL = buildurl("api", "events-floaters");
 
-var connectionString = "postgres://zeveayoktigtcq:a47c559c5701a913ca1a8087efc062f5dc06045e4776527a625baea91243d07c@ec2-50-19-109-120.compute-1.amazonaws.com:5432/d6ckf0q4vljd3a";
+var connectionString =
+  "postgres://zeveayoktigtcq:a47c559c5701a913ca1a8087efc062f5dc06045e4776527a625baea91243d07c@ec2-50-19-109-120.compute-1.amazonaws.com:5432/d6ckf0q4vljd3a";
 //"postgres://YourUserName:YourPassword@YourHost:5432/YourDatabase";
 //"postgres://eventsuser:eventsuser147@localhost:5432/events_calendar";
 //("postgres://zeveayoktigtcq:a47c559c5701a913ca1a");

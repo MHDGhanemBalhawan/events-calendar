@@ -18,7 +18,7 @@ export default class EditForm extends React.Component {
     onSubmit = event => {
         event.preventDefault();
         const body = {
-            name: this.namenRef.current.value,
+            name: this.nameRef.current.value,
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
@@ -72,7 +72,7 @@ export default class EditForm extends React.Component {
                                         className="font-weight-bold"
                                         htmlFor="event date"
                                     >
-                                        Events Date
+                                        Event Date
                                     </label>
                                     <input
                                         className="input form-control form-control-lg"
@@ -84,7 +84,7 @@ export default class EditForm extends React.Component {
                                         className="font-weight-bold"
                                         htmlFor="event description"
                                     >
-                                        Events Description
+                                        Event Description
                                     </label>
                                     <textarea
                                         className="textarea form-control form-control-lg"
