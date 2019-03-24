@@ -17,7 +17,7 @@ class App extends Component {
     };
 
     componentDidMount() {
-        fetch("/api/events")
+        fetch("https://cyf-events-backend.herokuapp.com/api/events")
             .then(res => res.json())
             .then(data => {
                 this.setState({ events: data });
@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     toDelete(id) {
-        fetch("/api/events/" + id, {
+        fetch("https://cyf-events-backend.herokuapp.com/api/events/" + id, {
             method: "delete"
         }).then(response => {
             if (response.status === 500) {
