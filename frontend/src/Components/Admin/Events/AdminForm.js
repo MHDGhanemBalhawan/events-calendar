@@ -18,7 +18,7 @@ export default class Form extends React.Component {
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
-        fetch("/api/events", {
+        fetch("https://cyf-events-backend.herokuapp.com/api/events", {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"

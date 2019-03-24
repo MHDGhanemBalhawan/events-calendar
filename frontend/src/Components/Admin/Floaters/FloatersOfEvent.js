@@ -4,7 +4,10 @@ export default class FloatersOfEvents extends React.Component {
     state = { mentors: [] };
 
     componentDidMount() {
-        fetch("/api/events-floaters/event/" + this.props.id)
+        fetch(
+            "https://cyf-events-backend.herokuapp.com/api/events-floaters/event/" +
+                this.props.id
+        )
             .then(res => res.json())
             .then(data => {
                 this.setState({ mentors: data });

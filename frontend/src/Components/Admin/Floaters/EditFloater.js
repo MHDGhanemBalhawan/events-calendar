@@ -23,14 +23,18 @@ export default class EditFloater extends React.Component {
             floater_email: this.floater_emailRef.current.value
         };
         console.log(this.props.floater_id);
-        fetch("/api/mentors/" + this.props.floater_id, {
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            method: "put",
-            body: JSON.stringify(body)
-        })
+        fetch(
+            "https://cyf-events-backend.herokuapp.com/api/mentors/" +
+                this.props.floater_id,
+            {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                method: "put",
+                body: JSON.stringify(body)
+            }
+        )
             .then(() => {
                 this.floater_fnameRef.current.value = "";
                 this.floater_surnameRef.current.value = "";

@@ -5,7 +5,9 @@ import "../../../Style/Event.css";
 export default class VolunteerForm extends React.Component {
                    state = { allmentors: [], message: false, volunteers: [], message2: false };
                    componentDidMount() {
-                       fetch("/api/mentors")
+                       fetch(
+                           "https://cyf-events-backend.herokuapp.com/api/mentors"
+                       )
                            .then(res => res.json())
                            .then(data => {
                                this.setState({
@@ -17,7 +19,10 @@ export default class VolunteerForm extends React.Component {
                    }
 
                    _fetchVolunteers() {
-                       fetch("/api/events-floaters/event/" + this.props.event_id)
+                       fetch(
+                           "https://cyf-events-backend.herokuapp.com/api/events-floaters/event/" +
+                               this.props.event_id
+                       )
                            .then(res => res.json())
                            .then(data1 => {
                                this.setState({
@@ -28,55 +33,81 @@ export default class VolunteerForm extends React.Component {
                    }
 
                    _addFloaterToEvent = floater_id => {
-                       fetch("/api/events-floaters/", {
-                           method: "POST",
-                           headers: {
-                               Accept: "application/json",
-                               "Content-Type": "application/json"
-                           },
-                           body: JSON.stringify({
-                               event_id: this.props.event_id,
-                               floater_id: floater_id
-                           })
-                       })
+                       fetch(
+                           "https://cyf-events-backend.herokuapp.com/api/events-floaters/",
+                           {
+                               method: "POST",
+                               headers: {
+                                   Accept:
+                                       "application/json",
+                                   "Content-Type":
+                                       "application/json"
+                               },
+                               body: JSON.stringify({
+                                   event_id: this.props
+                                       .event_id,
+                                   floater_id: floater_id
+                               })
+                           }
+                       )
                            .then(() => {
-                               this.setState({ message: true });
+                               this.setState({
+                                   message: true
+                               });
                                this.handleUpdate();
-                               setTimeout(() => this.setState({
+                               setTimeout(
+                                   () =>
+                                       this.setState({
                                            message: false,
-                                           volunteers: this.state
+                                           volunteers: this
+                                               .state
                                                .volunteers
-                                       }), 1000);
+                                       }),
+                                   1000
+                               );
 
                                this._fetchVolunteers();
                            })
-                           .catch(error => console.error(error));
+                           .catch(error =>
+                               console.error(error)
+                           );
                    };
 
                    _removeFloaterFromEvent = floater_id => {
                        fetch(
-                           "/api/events-floaters/" + floater_id,
+                           "https://cyf-events-backend.herokuapp.com/api/events-floaters/" +
+                               floater_id,
                            {
                                method: "DELETE",
                                headers: {
-                                   Accept: "application/json",
+                                   Accept:
+                                       "application/json",
                                    "Content-Type":
                                        "application/json"
                                }
                            }
                        )
                            .then(() => {
-                               this.setState({ message2: true });
+                               this.setState({
+                                   message2: true
+                               });
                                this.handleUpdate();
-                               setTimeout(() => this.setState({
+                               setTimeout(
+                                   () =>
+                                       this.setState({
                                            message2: false,
-                                           volunteers: this.state
+                                           volunteers: this
+                                               .state
                                                .volunteers
-                                       }), 1000);
+                                       }),
+                                   1000
+                               );
 
                                this._fetchVolunteers();
                            })
-                           .catch(error => console.error(error));
+                           .catch(error =>
+                               console.error(error)
+                           );
                    };
                    handleUpdate = () => {
                        console.log("handle update", this);

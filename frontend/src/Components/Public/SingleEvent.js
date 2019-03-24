@@ -8,7 +8,11 @@ export default class SingleEvent extends React.Component {
         event: []
     };
     componentDidMount() {
-        fetch(`/api/events/${this.props.match.params.id}`)
+        fetch(
+            `https://cyf-events-backend.herokuapp.com/api/events/${
+                this.props.match.params.id
+            }`
+        )
             .then(res => res.json())
             .then(data => {
                 this.setState({ event: data });

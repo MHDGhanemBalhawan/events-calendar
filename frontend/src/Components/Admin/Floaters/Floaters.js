@@ -14,7 +14,7 @@ export default class Floaters extends React.Component {
     };
 
     _getMentors = () => {
-        fetch("/api/mentors")
+        fetch("https://cyf-events-backend.herokuapp.com/api/mentors")
             .then(res => res.json())
             .then(data => {
                 this.setState({ mentors: data });
@@ -26,7 +26,9 @@ export default class Floaters extends React.Component {
     }
 
     _deleteFloater = id => {
-        fetch("/api/mentors/" + id, { method: "delete" })
+        fetch("https://cyf-events-backend.herokuapp.com/api/mentors/" + id, {
+            method: "delete"
+        })
             .then(response => {
                 this.setState({ message: true });
                 this._getMentors();

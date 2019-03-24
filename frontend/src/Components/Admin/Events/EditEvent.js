@@ -22,14 +22,18 @@ export default class EditForm extends React.Component {
             event_date: this.event_dateRef.current.value,
             description: this.descriptionRef.current.value
         };
-        fetch("/api/events/" + this.props.id, {
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            method: "put",
-            body: JSON.stringify(body)
-        })
+        fetch(
+            "https://cyf-events-backend.herokuapp.com/api/events/" +
+                this.props.id,
+            {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                method: "put",
+                body: JSON.stringify(body)
+            }
+        )
             .then(() => {
                 this.nameRef.current.value = "";
                 this.event_dateRef.current.value = "";

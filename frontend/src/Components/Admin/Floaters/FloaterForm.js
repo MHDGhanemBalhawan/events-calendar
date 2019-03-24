@@ -20,7 +20,7 @@ export default class FloaterForm extends React.Component {
             floater_surname: this.surnameRef.current.value,
             floater_email: this.emailRef.current.value
         };
-        fetch("/api/mentors", {
+        fetch("https://cyf-events-backend.herokuapp.com/api/mentors", {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
