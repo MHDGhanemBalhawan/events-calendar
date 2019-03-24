@@ -36,13 +36,13 @@ pool.connect(function(connectionError, poolClient) {
   }
 });
 router.use((httpRequest, httpResponse, next) => {
-  httpRequest.header("Access-Control-Allow-Origin", "*");
-  httpRequest.header(
+  httpResponse.header("Access-Control-Allow-Origin", "*");
+  httpResponse.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Request-With, Content-Type, Accept, Authorization"
   );
   if (httpRequest.method === "OPTIONS") {
-    httpRequest.header(
+    httpResponse.header(
       "Access-Control-Allow-Methods",
       "PUT, GET, PUT, DELETE, PATCH"
     );
