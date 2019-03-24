@@ -35,6 +35,20 @@ pool.connect(function(connectionError, poolClient) {
     console.log("Connected to database");
   }
 });
+router.use((httpRequest, httpResponse, next) => {
+  httpRequest.header("Access-Control-Allow-Origin", "*");
+  httpRequest.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Request-With, Content-Type, Accept, Authorization"
+  );
+  if (httpRequest.method === "OPTIONS") {
+    httpRequest.header(
+      "Access-Control-Allow-Methods",
+      "PUT, GET, PUT, DELETE, PATCH"
+    );
+    return httpResponse.status(200).json({});
+  }
+});
 
 // events router
 
