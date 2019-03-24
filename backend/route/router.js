@@ -48,6 +48,7 @@ router.use((httpRequest, httpResponse, next) => {
     );
     return httpResponse.status(200).json({});
   }
+  next();
 });
 
 // events router
