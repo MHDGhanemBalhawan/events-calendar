@@ -36,10 +36,7 @@ pool.connect(function(connectionError, poolClient) {
   }
 });
 router.use((httpRequest, httpResponse, next) => {
-  httpResponse.header(
-    "Access-Control-Allow-Origin",
-    "https://cyf-frontend.herokuapp.com/"
-  );
+  httpResponse.header("Access-Control-Allow-Origin", "*");
   httpResponse.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Request-With, Content-Type, Accept, Authorization"
