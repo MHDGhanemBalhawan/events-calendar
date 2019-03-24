@@ -2,7 +2,6 @@ import React from "react";
 import "../../Style/MainPage.css";
 import NavBar from "../NavBar";
 
-
 const admin = () => (
     <div className="container">
         <NavBar>

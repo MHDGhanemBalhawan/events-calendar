@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import "./Style/App.css";
+
 import Events from "./Components/Public/Events.js";
 import Form from "./Components/Admin/Events/AdminForm.js";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -10,6 +12,11 @@ import mainPage from "./Components/Public/MainPage";
 import Floaters from "./Components/Admin/Floaters/Floaters.js";
 import SingleEvent from "./Components/Public/SingleEvent";
 import AddToVolunteerList from "./Components/Public/AddToVolunteerList.js";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+import { faIgloo } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faIgloo);
 
 class App extends Component {
     state = {
